@@ -250,7 +250,7 @@ h6,
 /*** Service ***/
 .service-item {
     position: relative;
-    height: 350px;
+    height: 400px;
     padding: 30px 25px;
     background: #FFFFFF;
     box-shadow: 0 0 45px rgba(0, 0, 0, .08);
@@ -258,7 +258,8 @@ h6,
 }
 
 .service-item:hover {
-    background: var(--primary);
+    box-shadow: 0 0 45px rgba(0, 0, 0, .3);
+    /* background: var(--primary); */
 }
 
 .service-item .service-icon {
@@ -273,20 +274,48 @@ h6,
     transition: .5s;
 }
 
-.service-item:hover .service-icon {
+/* .service-item:hover .service-icon {
     color: var(--primary);
     background: url(../img/icon-shape-white.png);
+} */
+
+.service-item h5{
+    color: var(--dark);
 }
 
-.service-item h5,
+.company-logo {
+    display: block;
+    border:  1px solid grey;
+    border-radius: 20%;
+    width: 50px;
+    height: 50px;
+}
+
+/* .service-item img{
+    
+} */
+
+.verified{
+    width: 80px;
+    height: 32px;
+}
+
 .service-item p {
     transition: .5s;
 }
 
-.service-item:hover h5,
+.service-item ul{
+    height: 10rem;
+    font-size: small;
+    color: var(--dark);
+    padding-left: 1.2rem;
+    overflow: hidden;
+}
+
+/* .service-item:hover h5,
 .service-item:hover p {
     color: var(--light);
-}
+} */
 
 .service-item a.btn {
     position: relative;
@@ -297,7 +326,7 @@ h6,
 }
 
 .service-item:hover a.btn {
-    color: var(--primary);
+    color: var(--light);
 }
 
 .service-item a.btn::before {
@@ -315,7 +344,7 @@ h6,
 
 .service-item:hover a.btn::before {
     width: 100%;
-    background: var(--light);
+    background: var(--primary);
 }
 
 
