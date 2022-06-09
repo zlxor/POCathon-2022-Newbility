@@ -20,7 +20,6 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('Homepage/', include('Homepage.urls')),
-    path('', RedirectView.as_view(url='Homepage/')),
+    #path('admin/', admin.site.urls),
+    path('', include('Homepage.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
