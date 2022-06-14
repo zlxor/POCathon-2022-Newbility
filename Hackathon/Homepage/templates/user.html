@@ -7,8 +7,9 @@
         <a href="{% url 'jobs' %}" class="nav-item nav-link">Jobs</a>
         <a href="{% url 'post' %}" class="nav-item nav-link">Post</a>
         <a href="{% url 'match' %}" class="nav-item nav-link">Match</a>
+        <a href="{% url 'login' %}" class="nav-item nav-link active">Login</a>
     </div>
-    <a href="{% url 'signup' %}" class="btn btn-secondary text-light py-2 px-4 ms-5">Register</a>
+
 {% endblock %}
 {% block top %}
 <div class="container-xxl py-5 bg-primary hero-header mb-5"></div>
@@ -19,33 +20,34 @@
         <div class="row justify-content-center">
             <div class="col-lg-7">
                 <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
-                    <h2 class="mt-2">Register your company with us</h2>
+                    <h2 class="mt-2">Register with us</h2>
                 </div>
                 <div class="wow fadeInUp" data-wow-delay="0.3s">
-                    <form>
+                    <form method="POST">
+                        {% csrf_token%}
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="companyname" placeholder="Company Name">
-                                    <label for="companyname">Registered Company Name</label>
+                                    <input type="text" class="form-control" id="firstname" placeholder="John">
+                                    <label for="firstname">First name</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="UEN" placeholder="Unique Entity Number">
-                                    <label for="UEN">Unique Entity Number (UEN) </label>
+                                    <input type="text" class="form-control" id="lastname" placeholder="Doe">
+                                    <label for="lastname">Last name</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="date" class="form-control" id="registereddate" placeholder="DD/MM/YYYY">
-                                    <label for="registereddate">Date of Incorporation</label>
+                                    <input type="date" class="form-control" id="dob" placeholder="DD/MM/YYYY">
+                                    <label for="dob">Date of Birth</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
                                     <input type="email" id="email" class="form-control" placeholder="name@example.com" />
-                                    <label for="email">Company Email Address</label>
+                                    <label for="email">Email Address</label>
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -57,7 +59,7 @@
                             <div class="col-12">
                                 <div class="form-floating">
                                     <input class="form-control" type="file" id="Businessdocs" multiple />
-                                    <label for="Businessdocs" class="form-label">Upload business documents</label>
+                                    <label for="Businessdocs" class="form-label">Upload certificates</label>
                                 </div>
                             </div>
                             <!--

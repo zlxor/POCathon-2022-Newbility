@@ -1,105 +1,29 @@
-from django.shortcuts import render
-
+from django.contrib import messages
+from django.shortcuts import render, redirect
 # Create your views here.
-from .models import Book, Author, BookInstance, Genre
 
 def index(request):
-    """View function for home page of site."""
-
-    # Generate counts of some of the main objects
-    num_books = Book.objects.all().count()
-    num_instances = BookInstance.objects.all().count()
-
-    # Available books (status = 'a')
-    num_instances_available = BookInstance.objects.filter(status__exact='a').count()
-
-    # The 'all()' is implied by default.
-    num_authors = Author.objects.count()
-
-    context = {
-        'num_books': num_books,
-        'num_instances': num_instances,
-        'num_instances_available': num_instances_available,
-        'num_authors': num_authors,
-    }
-
-    # Render the HTML template index.html with the data in the context variable
-    return render(request, 'index.html', context=context)
+    return render(request, 'index.html')
 
 def job(request):
-    """View function for job page of site."""
-
-    # Generate counts of some of the main objects
-    num_books = Book.objects.all().count()
-    num_instances = BookInstance.objects.all().count()
-
-    # Available books (status = 'a')
-    num_instances_available = BookInstance.objects.filter(status__exact='a').count()
-
-    # The 'all()' is implied by default.
-    num_authors = Author.objects.count()
-
-    context = {
-        'num_books': num_books,
-        'num_instances': num_instances,
-        'num_instances_available': num_instances_available,
-        'num_authors': num_authors,
-    }
-
-    # Render the HTML template index.html with the data in the context variable
-    return render(request, 'jobs.html', context=context)
+    return render(request, 'jobs.html')
 
 def match(request):
-    """View function for job page of site."""
-
-    # Generate counts of some of the main objects
-    num_books = Book.objects.all().count()
-    num_instances = BookInstance.objects.all().count()
-
-    # Available books (status = 'a')
-    num_instances_available = BookInstance.objects.filter(status__exact='a').count()
-
-    # The 'all()' is implied by default.
-    num_authors = Author.objects.count()
-
-    context = {
-        'num_books': num_books,
-        'num_instances': num_instances,
-        'num_instances_available': num_instances_available,
-        'num_authors': num_authors,
-    }
-
-    # Render the HTML template index.html with the data in the context variable
-    return render(request, 'match.html', context=context)
+    return render(request, 'match.html')
 
 def post(request):
-    """View function for job page of site."""
-
-    # Generate counts of some of the main objects
-    num_books = Book.objects.all().count()
-    num_instances = BookInstance.objects.all().count()
-
-    # Available books (status = 'a')
-    num_instances_available = BookInstance.objects.filter(status__exact='a').count()
-
-    # The 'all()' is implied by default.
-    num_authors = Author.objects.count()
-
-    context = {
-        'num_books': num_books,
-        'num_instances': num_instances,
-        'num_instances_available': num_instances_available,
-        'num_authors': num_authors,
-    }
-
-    # Render the HTML template index.html with the data in the context variable
-    return render(request, 'post.html', context=context)
+    return render(request, 'post.html')
 
 
 def login(request):
-    # Render the HTML template index.html with the data in the context variable
     return render(request, 'login.html')
 
-def signup(request):
-    return render(request, 'signup.html')
+def userpage(request):
+    return render(request, 'user.html')
+
+def companypage(request):
+    return render(request, 'company.html')
+
+def option(request):
+    return render(request, 'option.html')
 
