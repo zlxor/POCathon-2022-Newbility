@@ -28,56 +28,42 @@
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="firstname" placeholder="John">
+                                    {{ form.first_name}}
                                     <label for="firstname">First name</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="lastname" placeholder="Doe">
+                                    {{ form.last_name}}
                                     <label for="lastname">Last name</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="date" class="form-control" id="dob" placeholder="DD/MM/YYYY">
+                                    {{ form.DOB}}
                                     <label for="dob">Date of Birth</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="email" id="email" class="form-control" placeholder="name@example.com" />
+                                    {{ form.emailaddress }}
                                     <label for="email">Email Address</label>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-floating">
-                                    <input type="password" id="password" class="form-control" placeholder="Password"/>
+                                    {{ form.password }}
                                     <label for="password">Password</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input class="form-control" type="file" id="Businessdocs" multiple />
+                                    {{ form.documents }}
                                     <label for="Businessdocs" class="form-label">Upload certificates</label>
                                 </div>
                             </div>
-                            <!--
-                            Can't seem to get it to work
-                            https://www.codingnepalweb.com/drag-drop-file-upload-feature-javascript/
                             <div class="col-12">
-                                <div class="drag-area">
-                                    <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-                                        <header>Drag & Drop to Upload File</header>
-                                        <span>OR</span>
-                                        <button>Browse File</button>
-                                        <input class="form-control" type="file" id="Businessdocs" multiple hidden />
-                                    </div>
-                                    
-                                </div>
-                            -->
-                            <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Sign up</button>
+                                <button class="btn btn-primary w-100 py-3" type="submit" value="OK">Sign up</button>
                             </div>
                         </div>
                     </form>

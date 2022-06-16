@@ -28,37 +28,37 @@
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="companyname" placeholder="Company Name">
+                                    {{ form.Companyname }}
                                     <label for="companyname">Registered Company Name</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="UEN" placeholder="Unique Entity Number">
+                                    {{ form.UEN }}
                                     <label for="UEN">Unique Entity Number (UEN) </label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="date" class="form-control" id="registereddate" placeholder="DD/MM/YYYY">
+                                    {{ form.DOI }}
                                     <label for="registereddate">Date of Incorporation</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="email" id="email" class="form-control" placeholder="name@example.com" />
+                                    {{ form.emailaddress }}
                                     <label for="email">Company Email Address</label>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-floating">
-                                    <input type="password" id="password" class="form-control" placeholder="Password"/>
+                                    {{ form.password }}
                                     <label for="password">Password</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input class="form-control" type="file" id="Businessdocs" multiple />
+                                    {{ form.documents }}
                                     <label for="Businessdocs" class="form-label">Upload business documents</label>
                                 </div>
                             </div>
