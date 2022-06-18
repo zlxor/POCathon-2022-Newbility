@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Match with a Job</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="index.html" class="navbar-brand p-0">
+                    <h1 class="m-0"><i class="fa fa-search me-2"></i>Newbility<span class="fs-5">Job Assistant</span></h1>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+						<a href="jobs.html" class="nav-item nav-link">Jobs</a>
+                        <a href="post.html" class="nav-item nav-link">Post</a>
+                        <a href="match.html" class="nav-item nav-link active">Match</a>
+                        
+                        <!--
+                        <a href="project.html" class="nav-item nav-link">Verify</a>
+                        <a href="project.html" class="nav-item nav-link">Project</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="team.html" class="dropdown-item">Our Team</a>
+                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                                <a href="404.html" class="dropdown-item">404 Page</a>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        -->
+                    </div>
+					<a href="login.html" class="btn btn-outline-light text-light py-2 px-4 ms-5">Company Mode</a>
+                </div>
+            </nav>
+
+            <div class="container-xxl py-5 bg-primary hero-header mb-5" style="padding-bottom: 0rem !important;">
+                <div class="container my-5 py-5 px-lg-5" style="margin-bottom: 0rem !important;">
+                    <div class="row g-5 py-5">
+                        <div class="col-12 text-center">
+                            <h1 class="text-white animated zoomIn">Match Jobs for You</h1>
+                            <hr class="bg-white mx-auto mt-0" style="width: 90px;">
+                            <p class="text-white">Submit your info to view matched jobs for you.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+
+        <div class="container-xxl py-5">
+            <div class="container px-lg-5">
+                <div class="row g-5">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="width: 60%;">
+                        <div class="bg-light rounded h-100 d-flex align-items-center p-4">
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-12 col-sm-6">
+                                        <select class="form-select border-0" style="height: 55px;">
+                                            <option selected>Highest Qualification</option>
+                                            <option value="1">Diploma</option>
+                                            <option value="2">Degree</option>
+                                            <option value="3">Master</option>
+                                            <option value="4">Phd</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <select class="form-select border-0" style="height: 55px;">
+                                            <option selected>Location</option>
+                                            <option value="1">Tampines</option>
+                                            <option value="2">Bugis</option>
+                                            <option value="3">Jurong East</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="col-12 col-sm-6">
+                                        <select class="form-select border-0" style="height: 55px;">
+                                            <option selected>Industry</option>
+                                            <option value="1">IT & Communication</option>
+                                            <option value="2">Food & Beverage</option>
+                                            <option value="3">Retail</option>
+                                            <option value="4">Healthcare</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <input type="text" class="form-control border-0" placeholder="Job Position" style="height: 55px;">
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <select class="form-select border-0" style="height: 55px;">
+                                            <option selected>Job Type</option>
+                                            <option value="1">Full-time</option>
+                                            <option value="2">Part-time</option>
+                                            <option value="3">Internship</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <select class="form-select border-0" style="height: 55px;">
+                                            <option selected>Industry Experience</option>
+                                            <option value="1">Entry-level</option>
+                                            <option value="2">Junior</option>
+                                            <option value="3">Senior</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="container">
+                                        <h6 class="position-relative d-inline ps-4">Skills</h6>
+                                        <div class="accordion-head" style="margin-left: 2rem;">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#accordionBodyOne" aria-expanded="false" aria-controls="accordionBodyOne"
+                                                  class="collapsed">
+                                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                        <ul class="ks-cboxtags" style="padding-top: 0rem; padding-bottom: 0rem; margin-bottom: 0; ">
+                                          <li><input type="checkbox" id="checkboxOne" value="Rainbow Dash"><label for="checkboxOne">Software development</label></li>
+                                          <li><input type="checkbox" id="checkboxTwo" value="Cotton Candy"><label for="checkboxTwo">Decision Making</label></li>
+                                          <li><input type="checkbox" id="checkboxThree" value="Rarity"><label for="checkboxThree">Project management</label></li>
+                                          <li><input type="checkbox" id="checkboxFour" value="Moondancer"><label for="checkboxFour">JavaScript</label></li>
+                                        </ul>
+                                        
+                                        <div id="accordionBodyOne" class="collapse" role="tabpanel" aria-labelledby="accordionHeadingOne" aria-expanded="false">
+                                        <ul class="ks-cboxtags" style="padding-top: 0rem; padding-bottom: 0rem; margin-top: 0;">
+                                          <li><input type="checkbox" id="checkboxFive" value="Surprise"><label for="checkboxFive">Information systems design</label></li>
+                                          <li><input type="checkbox" id="checkboxSix" value="Twilight Sparkle"><label for="checkboxSix">SQL</label></li>
+                                          <li><input type="checkbox" id="checkboxSeven" value="Fluttershy"><label for="checkboxSeven">Business process analysis</label></li>
+                                          <li><input type="checkbox" id="checkboxNine" value="Princess Celestia"><label for="checkboxNine">Deployment</label></li>
+                                          <li><input type="checkbox" id="checkboxEight" value="Derpy Hooves"><label for="checkboxEight">Proposal Writing </label></li>
+                                          <li><input type="checkbox" id="checkboxTen" value="Gusty"><label for="checkboxTen">Python</label></li>
+                                          <li><input type="checkbox" id="checkboxFifteen" value="Firefly"><label for="checkboxFifteen">Chinese</label></li>
+                                          <li class="ks-selected"><input type="checkbox" id="checkboxEleven" value="Discord"><label for="checkboxEleven">Linux operating systems</label></li>
+                                          <li><input type="checkbox" id="checkboxTwelve" value="Clover"><label for="checkboxTwelve">Problem-Solving</label></li>
+                                          <li><input type="checkbox" id="checkboxThirteen" value="Baby Moondancer"><label for="checkboxThirteen">Design Thinking</label></li>
+                                          <li><input type="checkbox" id="checkboxFourteen" value="Medley"><label for="checkboxFourteen">Leadership</label></li>
+                                        </ul>
+                                        </div>
+                                      </div>
+
+
+
+
+                                      <div class="box" style="padding-bottom: 1rem;">
+                                        <h6>Expected Salary</h6>
+                                        <div class="values">
+                                            <div>$<span id="first"></span></div> - <div>$<span id="second"></span></div>
+                                        </div>
+                                    
+                                        <div class="slider" data-value-0="#first" data-value-1="#second" data-range="#third"></div>
+                                    
+                                    </div>
+                                    <a class="dribbble" href="https://dribbble.com/shots/7268454-Rubber-Slider" target="_blank"><img src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg" alt=""></a>
+
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100 py-3" type="submit">Match</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-6" style="width: 40%; padding-left: 5%;">
+                        <h1 class="animated zoomIn text-center">Match Job For You </h1>
+                            <hr class="mx-auto mt-1" style="width: 90px;">
+                            <div style="margin-top: 3rem;">
+                                <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="img/about.jpg">
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Portfolio Start -->
+        <div class="container-xxl py-5">
+            <div class="container px-lg-5">
+                <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="position-relative d-inline text-primary ps-4">Our Projects</h6>
+                    <h2 class="mt-2">Recently Launched Projects</h2>
+                </div>
+                <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="col-12 text-center">
+                        <ul class="list-inline mb-5" id="portfolio-flters">
+                            <li class="btn px-3 pe-4 active" data-filter="*">All</li>
+                            <li class="btn px-3 pe-4" data-filter=".first">Design</li>
+                            <li class="btn px-3 pe-4" data-filter=".second">Development</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row g-4 portfolio-container">
+                    <div class="col-lg-4 col-md-6 portfolio-item first wow zoomIn" data-wow-delay="0.1s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/portfolio-1.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/portfolio-1.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Web Design</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="">Project Name</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item second wow zoomIn" data-wow-delay="0.3s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/portfolio-2.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/portfolio-2.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Web Design</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="">Project Name</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item first wow zoomIn" data-wow-delay="0.6s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/portfolio-3.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/portfolio-3.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Web Design</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="">Project Name</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item second wow zoomIn" data-wow-delay="0.1s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/portfolio-4.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/portfolio-4.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Web Design</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="">Project Name</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item first wow zoomIn" data-wow-delay="0.3s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/portfolio-5.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/portfolio-5.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Web Design</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="">Project Name</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item second wow zoomIn" data-wow-delay="0.6s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/portfolio-6.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/portfolio-6.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Web Design</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="">Project Name</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio End -->
+        
+
+    
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script>
+        $('.slider').each(function(e) {
+
+var slider = $(this),
+    width = slider.width(),
+    handle,
+    handleObj;
+
+let svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+svg.setAttribute('viewBox', '0 0 ' + width + ' 83');
+
+slider.html(svg);
+slider.append($('<div>').addClass('active').html(svg.cloneNode(true)));
+
+slider.slider({
+    range: true,
+    values: [1800, 7800],
+    min: 500,
+    step: 5,
+    minRange: 1000,
+    max: 12000,
+    create(event, ui) {
+
+        slider.find('.ui-slider-handle').append($('<div />'));
+
+        $(slider.data('value-0')).html(slider.slider('values', 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '&thinsp;'));
+        $(slider.data('value-1')).html(slider.slider('values', 1).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '&thinsp;'));
+        $(slider.data('range')).html((slider.slider('values', 1) - slider.slider('values', 0)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '&thinsp;'));
+
+        setCSSVars(slider);
+
+    },
+    start(event, ui) {
+
+        $('body').addClass('ui-slider-active');
+
+        handle = $(ui.handle).data('index', ui.handleIndex);
+        handleObj = slider.find('.ui-slider-handle');
+
+    },
+    change(event, ui) {
+        setCSSVars(slider);
+    },
+    slide(event, ui) {
+
+        let min = slider.slider('option', 'min'),
+            minRange = slider.slider('option', 'minRange'),
+            max = slider.slider('option', 'max');
+
+        if(ui.handleIndex == 0) {
+            if((ui.values[0] + minRange) >= ui.values[1]) {
+                slider.slider('values', 1, ui.values[0] + minRange);
+            }
+            if(ui.values[0] > max - minRange) {
+                return false;
+            }
+        } else if(ui.handleIndex == 1) {
+            if((ui.values[1] - minRange) <= ui.values[0]) {
+                slider.slider('values', 0, ui.values[1] - minRange);
+            }
+            if(ui.values[1] < min + minRange) {
+                return false;
+            }
+        }
+
+        $(slider.data('value-0')).html(ui.values[0].toString().replace(/\B(?=(\d{3})+(?!\d))/g, '&thinsp;'));
+        $(slider.data('value-1')).html(ui.values[1].toString().replace(/\B(?=(\d{3})+(?!\d))/g, '&thinsp;'));
+        $(slider.data('range')).html((slider.slider('values', 1) - slider.slider('values', 0)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '&thinsp;'));
+
+        setCSSVars(slider);
+
+    },
+    stop(event, ui) {
+
+        $('body').removeClass('ui-slider-active');
+
+        let duration = .6,
+            ease = Elastic.easeOut.config(1.08, .44);
+
+        TweenMax.to(handle, duration, {
+            '--y': 0,
+            ease: ease
+        });
+
+        TweenMax.to(svgPath, duration, {
+            y: 42,
+            ease: ease
+        });
+
+        handle = null;
+
+    }
+});
+
+var svgPath = new Proxy({
+    x: null,
+    y: null,
+    b: null,
+    a: null
+}, {
+    set(target, key, value) {
+        target[key] = value;
+        if(target.x !== null && target.y !== null && target.b !== null && target.a !== null) {
+            slider.find('svg').html(getPath([target.x, target.y], target.b, target.a, width));
+        }
+        return true;
+    },
+    get(target, key) {
+        return target[key];
+    }
+});
+
+svgPath.x = width / 2;
+svgPath.y = 42;
+svgPath.b = 0;
+svgPath.a = width;
+
+$(document).on('mousemove touchmove', e => {
+    if(handle) {
+
+        let laziness = 4,
+            max = 24,
+            edge = 52,
+            other = handleObj.eq(handle.data('index') == 0 ? 1 : 0),
+            currentLeft = handle.position().left,
+            otherLeft = other.position().left,
+            handleWidth = handle.outerWidth(),
+            handleHalf = handleWidth / 2,
+            y = e.pageY - handle.offset().top - handle.outerHeight() / 2,
+            moveY = (y - laziness >= 0) ? y - laziness : (y + laziness <= 0) ? y + laziness : 0,
+            modify = 1;
+
+        moveY = (moveY > max) ? max : (moveY < -max) ? -max : moveY;
+        modify = handle.data('index') == 0 ? ((currentLeft + handleHalf <= edge ? (currentLeft + handleHalf) / edge : 1) * (otherLeft - currentLeft - handleWidth <= edge ? (otherLeft - currentLeft - handleWidth) / edge : 1)) : ((currentLeft - (otherLeft + handleHalf * 2) <= edge ? (currentLeft - (otherLeft + handleWidth)) / edge : 1) * (slider.outerWidth() - (currentLeft + handleHalf) <= edge ? (slider.outerWidth() - (currentLeft + handleHalf)) / edge : 1));
+        modify = modify > 1 ? 1 : modify < 0 ? 0 : modify;
+
+        if(handle.data('index') == 0) {
+            svgPath.b = currentLeft / 2  * modify;
+            svgPath.a = otherLeft;
+        } else {
+            svgPath.b = otherLeft + handleHalf;
+            svgPath.a = (slider.outerWidth() - currentLeft) / 2 + currentLeft + handleHalf + ((slider.outerWidth() - currentLeft) / 2) * (1 - modify);
+        }
+
+        svgPath.x = currentLeft + handleHalf;
+        svgPath.y = moveY * modify + 42;
+
+        handle.css('--y', moveY * modify);
+
+    }
+});
+
+});
+
+function getPoint(point, i, a, smoothing) {
+let cp = (current, previous, next, reverse) => {
+        let p = previous || current,
+            n = next || current,
+            o = {
+                length: Math.sqrt(Math.pow(n[0] - p[0], 2) + Math.pow(n[1] - p[1], 2)),
+                angle: Math.atan2(n[1] - p[1], n[0] - p[0])
+            },
+            angle = o.angle + (reverse ? Math.PI : 0),
+            length = o.length * smoothing;
+        return [current[0] + Math.cos(angle) * length, current[1] + Math.sin(angle) * length];
+    },
+    cps = cp(a[i - 1], a[i - 2], point, false),
+    cpe = cp(point, a[i - 1], a[i + 1], true);
+return `C ${cps[0]},${cps[1]} ${cpe[0]},${cpe[1]} ${point[0]},${point[1]}`;
+}
+
+function getPath(update, before, after, width) {
+let smoothing = .16,
+    points = [
+        [0, 42],
+        [before <= 0 ? 0 : before, 42],
+        update,
+        [after >= width ? width : after, 42],
+        [width, 42]
+    ],
+    d = points.reduce((acc, point, i, a) => i === 0 ? `M ${point[0]},${point[1]}` : `${acc} ${getPoint(point, i, a, smoothing)}`, '');
+return `<path d="${d}" />`;
+}
+
+function setCSSVars(slider) {
+let handle = slider.find('.ui-slider-handle');
+slider.css({
+    '--l': handle.eq(0).position().left + handle.eq(0).outerWidth() / 2,
+    '--r': slider.outerWidth() - (handle.eq(1).position().left + handle.eq(1).outerWidth() / 2)
+});
+}
+
+    </script>
+</body>
+
+</html>
