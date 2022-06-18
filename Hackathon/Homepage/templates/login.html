@@ -27,18 +27,27 @@
                                 <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
                                     <h2 class="mt-2">Login to your account</h2>
                                 </div>
+                                {% if form.errors %}
+                                    {% for field in form %}
+                                        {% for error in field.errors %} 
+                                            <div class="alert alert-danger">
+                                                    <strong>{{ error|escape }}</strong>
+                                            </div>
+                                        {% endfor %}
+                                    {% endfor %}
+                                {% endif %}
                                 <form method="POST">
                                     {% csrf_token%}
                                     <div class="row g-3">
                                         <div class="col-md-12">
                                             <div class="form-floating">
-                                                {{ form.user }}
+                                                {{ form.username }}
                                                 <label for="email">Email</label>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-floating">
-                                                {{ form.passw }}
+                                                {{ form.password }}
                                                 <label for="password">Password</label>
                                             </div>
                                         </div>

@@ -8,7 +8,9 @@ from django.contrib.auth import authenticate, login
 
 def index(request):
     return render(request, 'index.html')
-
+#Matching
+#Scam
+#Affindi API
 def registeruser(request):
     msg = None
     if(request.method == 'POST'):
@@ -47,6 +49,7 @@ def registercompany(request):
 def login(request):
     msg = None
     if(request.method == 'POST'):
+        form = LoginForm()
         if(form.is_valid()):
             Username = form.cleaned_data.get('username')
             Password = form.cleaned_data.get('password')
@@ -89,4 +92,8 @@ def companypage(request):
 
 def option(request):
     return render(request, 'option.html')
+
+
+def rec(request):
+    return render(request, 'recommend.html')
 

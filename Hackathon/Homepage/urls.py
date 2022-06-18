@@ -10,5 +10,6 @@ urlpatterns = [
     path('match', views.match, name='match'),
     path('post', views.post, name='post'),
     path('login', views.login, name='login'),
+    path('rec', views.rec, name='rec'),
 
 ]

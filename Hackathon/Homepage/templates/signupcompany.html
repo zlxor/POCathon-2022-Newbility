@@ -23,61 +23,62 @@
                     <h2 class="mt-2">Register your company with us</h2>
                 </div>
                 <div class="wow fadeInUp" data-wow-delay="0.3s">
+                    {% if form.errors %}
+                        {% for field in form %}
+                            {% for error in field.errors %} 
+                                <div class="alert alert-danger">
+                                        <strong>{{ error|escape }}</strong>
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                    {% endif %}
                     <form method="POST">
                         {% csrf_token%}
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    {{ form.Companyname }}
+                                    {{ form.first_name }}
                                     <label for="companyname">Registered Company Name</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    {{ form.UEN }}
+                                    {{ form.last_name }}
                                     <label for="UEN">Unique Entity Number (UEN) </label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    {{ form.DOI }}
+                                    {{ form.Date }}
                                     <label for="registereddate">Date of Incorporation</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    {{ form.emailaddress }}
+                                    {{ form.username }}
                                     <label for="email">Company Email Address</label>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-floating">
-                                    {{ form.password }}
+                                    {{ form.password1 }}
                                     <label for="password">Password</label>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    {{ form.password2 }}
+                                    <label for="password1">Re-enter Password</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    {{ form.documents }}
+                                    {{ form.Documents }}
                                     <label for="Businessdocs" class="form-label">Upload business documents</label>
                                 </div>
                             </div>
-                            <!--
-                            Can't seem to get it to work
-                            https://www.codingnepalweb.com/drag-drop-file-upload-feature-javascript/
                             <div class="col-12">
-                                <div class="drag-area">
-                                    <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-                                        <header>Drag & Drop to Upload File</header>
-                                        <span>OR</span>
-                                        <button>Browse File</button>
-                                        <input class="form-control" type="file" id="Businessdocs" multiple hidden />
-                                    </div>
-                                    
-                                </div>
-                            -->
-                            <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Sign up</button>
+                                <button class="btn btn-primary w-100 py-3" type="submit" value="OK">Sign up</button>
                             </div>
                         </div>
                     </form>

@@ -3,8 +3,8 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import Profile
 
 class LoginForm(forms.Form):
-    user = forms.EmailField()
-    passw = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control'}), required=True)
+    username = forms.EmailField(widget=forms.TextInput(attrs={'class': 'form-control'}), required=True)
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control'}), required=True)
 
 class DateInput(forms.DateInput):
     input_type = 'date'
