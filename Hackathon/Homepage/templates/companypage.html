@@ -1,0 +1,338 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}<title>Company Page</title>{% endblock %}
+
+{% block top %}
+<div class="container-xxl py-5 bg-primary hero-header mb-5"></div>
+{% endblock %}
+
+{% block content %}
+<!-- Service Start -->
+<div class="container">
+    <div class="company">
+        <div ng-app="tabApp">
+            <div class="row" ng-controller="TabController">
+                <div class="col-md-1 splitLine mt-3" style="height: 600px; width: 12.499999995%">
+                    <div class="mt-n2 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="mb-5 nav nav-pills nav-stacked row">
+                            <div class="companyBtn" ng-class="{ active: isSet(1) }">
+                                <a class="btn px-3 mt-auto ms-auto" ng-click="setTab(1)">Profile</a>
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="companyBtn" ng-class="{ active: isSet(2) }">
+                                <a class="btn px-3 mt-auto ms-auto" ng-click="setTab(2)">Verify</a>
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="companyBtn" ng-class="{ active: isSet(3) }">
+                                <a class="btn px-3 mt-auto ms-auto" ng-click="setTab(3)">Post</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-10" style="padding-left: 50px; padding-top: 10px; width: 87.49999965%;">
+                    <div class="jumbotron">
+                        <div ng-show="isSet(1)">
+                            <div class="wow fadeInUp" data-wow-delay="0.3s">
+                                <h1>Company Profile</h1>
+                                <p>Your company is ceritified! <a href="#" class="btn btn-outline-primary py-2 px-4 ms-5">View Certification</a></p>  
+                                <!--<p>Your comapny certification has expired! Please upload your documents again!</p>      -->
+                                <form>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="companyname" placeholder="Company Name" disabled="disabled">
+                                                <label for="companyname">GOOGLE SINGAPORE PTE. LTD.</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="UEN" placeholder="Unique Entity Number" disabled="disabled">
+                                                <label for="UEN">UEN : 200605367W </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="registereddate" placeholder="dd/mm/yyyy" disabled="disabled">
+                                                <label for="registereddate">Date of Incorporation : dd/mm/yyyy</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="expiredate" placeholder="dd/mm/yyyy" disabled="disabled">
+                                                <label for="expiredate">Date of Expiry : dd/mm/yyyy</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-floating">
+                                                <input type="phone" id="industry" class="form-control" placeholder="xxxxxxxx" disabled="disabled">
+                                                <label for="phone">Industry : Consulting</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-floating">
+                                                <input type="phone" id="phone" class="form-control" placeholder="xxxxxxxx" disabled="disabled">
+                                                <label for="phone">Company Phone : 12345678</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-floating">
+                                                <input type="email" id="email" class="form-control" placeholder="name@example.com" disabled="disabled">
+                                                <label for="email">Company Email : hr@google.com</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-floating">
+                                                <input type="text" id="address" class="form-control" placeholder="address" disabled="disabled">
+                                                <label for="address">Company Address : 8, MARINA BOULEVARD, #05-02, MARINA BAY FINANCIAL CENTRE, SINGAPORE 018981</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <!-- <button class="btn btn-primary w-100 py-3" type="submit">Sign up</button> 
+                                            <a class="btn btn-primary w-100 py-3" href="https://www.bizfile.gov.sg/ngbbizfileinternet/faces/oracle/webcenter/portalapp/pages/BizfileHomepage.jspx">Business Docs</a>
+                                       --> </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div ng-show="isSet(2)">
+                            <h1>Verify job opportunities</h1>
+                            <div class="split section-title position-relative mb-4 pb-2">
+                                <h6 class="position-relative text-primary ps-4">Waiting for Verification</h6>
+                            </div>
+                            <div class="row g-4">
+                                <!-- This is the display box -->
+                                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
+                                    <div class="service-item2 d-flex flex-column rounded">
+                                        <div class="d-flex">
+                                            <img class="mb-3 company-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKWgStyZIRMBw2vhADy9q8GTi-MXXmwc0wADdN&s=0" alt="">
+                                            <!-- <img class="mb-3 ms-auto verified" src="https://s1.ax1x.com/2022/06/03/XUj8XR.png" alt=""> -->
+                                        </div>
+                                        <h5 class="mb-1">Software Developer</h5>
+                                        <p class="mb-2" style="color: var(--dark)">Google</p>
+                                        <p class="mb-0" style="font-size:small"> Singapore</p>
+                                        <p class="mb-1"style="font-size:small"> USD 9.3K monthly</p>
+                                        <p class="mb-0" style="font-size:small"> Source: LinkedIn</p>
+                                        <ul>
+                                            <li>Full-time</li>
+                                            <li>Bachelor's degree in Computer Science or related engineering field, or equivalent practical experience.</li>
+                                            <li>5 years of coding experience in one or more of the following languages: C, C++, Java, or Python.</li>
+                                        </ul>
+                                        <div class="d-flex">
+                                            <div class="ms-2">
+                                                <p class="mb-0" style="font-size:small"> 5 days ago</p>
+                                                <!-- <p class="mb-0" style="font-size:10px; color:green">ALiCzsbYbsXe38y4vRcsRWWIERRlKY6GYA</p> -->
+                                            </div>
+                                            <div class="ms-auto row">
+                                                <a class="col-md-6 btn1 btn px-3 mt-auto">Verify</a>
+                                                <a class="col-md-6 btn2 btn px-3 mt-auto">Scam</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                                    <div class="service-item2 d-flex flex-column rounded">
+                                        <div class="d-flex">
+                                            <img class="mb-3 company-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKWgStyZIRMBw2vhADy9q8GTi-MXXmwc0wADdN&s=0" alt="">
+                                            <!-- <img class="mb-3 ms-auto verified" src="https://s1.ax1x.com/2022/06/03/XUj8XR.png" alt=""> -->
+                                        </div>
+                                        <h5 class="mb-1">Product Lead</h5>
+                                        <p class="mb-2" style="color: var(--dark)">Google</p>
+                                        <p class="mb-0" style="font-size:small"> Singapore</p>
+                                        <p class="mb-1"style="font-size:small"> USD 7.3K monthly</p>
+                                        <p class="mb-0" style="font-size:small"> Source: Monster Job</p>
+                                        <ul>
+                                            <li>Full-time</li>
+                                            <li>Bachelor's degree or equivalent practical experience.</li>
+                                            <li>5 years of experience as a brand marketing manager or brand consulting, or corporate affairs/Corporate Social Responsibility (CSR), and public affairs.</li>
+                                        </ul>
+                                        <div class="d-flex">
+                                            <div class="ms-2">
+                                                <p class="mb-0" style="font-size:small"> 2 days ago</p>
+                                                <!-- <p class="mb-0" style="font-size:10px; color:green">0CB8QtI8BKAFqFwoTCNiPzLmnkfgCFQAA</p> -->
+                                            </div>
+                                            <div class="ms-auto row">
+                                                <a class="col-md-6 btn1 btn px-3 mt-auto ">Verify</a>
+                                                <a class="col-md-6 btn2 btn px-3 mt-auto">Scam</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                                    <div class="service-item2 d-flex flex-column rounded">
+                                        <div class="d-flex">
+                                            <img class="mb-3 company-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKWgStyZIRMBw2vhADy9q8GTi-MXXmwc0wADdN&s=0" alt="">
+                                            <!-- <img class="mb-3 ms-auto verified" src="https://s1.ax1x.com/2022/06/03/XUj8XR.png" alt=""> -->
+                                        </div>
+                                        <h5 class="mb-1">Marketing Manager</h5>
+                                        <p class="mb-2" style="color: var(--dark)">Google</p>
+                                        <p class="mb-0" style="font-size:small"> America</p>
+                                        <p class="mb-1"style="font-size:small"> USD 12.3K monthly</p>
+                                        <p class="mb-0" style="font-size:small"> Source: Job Street</p>
+                                        <ul>
+                                            <li>Full-time</li>
+                                            <li>Bachelor's degree or equivalent practical experience.</li>
+                                            <li>3 years of experience in strategy, operations, project management, relationship building, and stakeholder management across cross-functional teams.</li>
+                                        </ul>
+                                        <div class="d-flex">
+                                            <div class="ms-2">
+                                                <p class="mb-0" style="font-size:small"> 4 days ago</p>
+                                                <!-- <p class="mb-0" style="font-size:10px; color:green">2ahUKEwiR6LHsZH4AhVzKbcAHa7VDiMQ2</p> -->
+                                            </div>
+                                            <div class="ms-auto row">
+                                                <a class="col-md-6 btn1 btn px-3 mt-auto">Verify</a>
+                                                <a class="col-md-6 btn2 btn px-3 mt-auto">Scam</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="split splitLine2 section-title position-relative mb-4 pb-2">
+                                <h6 class="position-relative text-primary ps-4">Verified Job Opportunities</h6>
+                            </div>
+                            <div class="row g-4">
+                                <!-- This is the display box -->
+                                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
+                                    <div class="service-item d-flex flex-column rounded">
+                                        <div class="d-flex">
+                                            <img class="mb-3 company-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKWgStyZIRMBw2vhADy9q8GTi-MXXmwc0wADdN&s=0" alt="">
+                                            <img class="mb-3 ms-auto verified" src="https://s1.ax1x.com/2022/06/03/XUj8XR.png" alt="">
+                                        </div>
+                                        <h5 class="mb-1">Software Developer 22</h5>
+                                        <p class="mb-3" style="color: var(--dark)">Google</p>
+                                        <p class="mb-0" style="font-size:small"> Singapore</p>
+                                        <p style="font-size:small"> SGD 8.5K monthly</p>
+                                        <ul>
+                                            <li>Full-time</li>
+                                            <li>Bachelor's degree in Computer Science or related engineering field, or equivalent practical experience.</li>
+                                            <li>5 years of coding experience in one or more of the following languages: C, C++, Java, or Python.</li>
+                                        </ul>
+                                        <div class="d-flex">
+                                            <div class="ms-2">
+                                                <p class="mb-0" style="font-size:small"> 5 days ago</p>
+                                                <p class="mb-0" style="font-size:10px; color:green">ALiCzsbYbsXe38y4vRcsRWWIERRlKY6GYA</p>
+                                            </div>
+                                            <a class="btn px-3 mt-auto ms-auto" href="{% url 'matchTalents' %}">Match Talents</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                                    <div class="service-item d-flex flex-column rounded">
+                                        <div class="d-flex">
+                                            <img class="mb-3 company-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKWgStyZIRMBw2vhADy9q8GTi-MXXmwc0wADdN&s=0" alt="">
+                                            <img class="mb-3 ms-auto verified" src="https://s1.ax1x.com/2022/06/03/XUj8XR.png" alt="">
+                                        </div>
+                                        <h5 class="mb-1">Product Lead</h5>
+                                        <p class="mb-3" style="color: var(--dark)">Google</p>
+                                        <p class="mb-0" style="font-size:small"> Singapore</p>
+                                        <p style="font-size:small"> SGD 7.8K monthly</p>
+                                        <ul>
+                                            <li>Full-time</li>
+                                            <li>Bachelor's degree or equivalent practical experience.</li>
+                                            <li>5 years of experience as a brand marketing manager or brand consulting, or corporate affairs/Corporate Social Responsibility (CSR), and public affairs.</li>
+                                        </ul>
+                                        <div class="d-flex">
+                                            <div class="ms-2">
+                                                <p class="mb-0" style="font-size:small"> 2 days ago</p>
+                                                <p class="mb-0" style="font-size:10px; color:green">0CB8QtI8BKAFqFwoTCNiPzLmnkfgCFQAA</p>
+                                            </div>
+                                            <a class="btn px-3 mt-auto ms-auto" href="recommend.html">Match Talents</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                                    <div class="service-item d-flex flex-column rounded">
+                                        <div class="d-flex">
+                                            <img class="mb-3 company-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKWgStyZIRMBw2vhADy9q8GTi-MXXmwc0wADdN&s=0" alt="">
+                                            <img class="mb-3 ms-auto verified" src="https://s1.ax1x.com/2022/06/03/XUj8XR.png" alt="">
+                                        </div>
+                                        <h5 class="mb-1">Marketing Manager</h5>
+                                        <p class="mb-3" style="color: var(--dark)">Google</p>
+                                        <p class="mb-0" style="font-size:small"> America</p>
+                                        <p style="font-size:small"> USD 12.3K monthly</p>
+                                        <ul>
+                                            <li>Full-time</li>
+                                            <li>Bachelor's degree or equivalent practical experience.</li>
+                                            <li>3 years of experience in strategy, operations, project management, relationship building, and stakeholder management across cross-functional teams.</li>
+                                        </ul>
+                                        <div class="d-flex">
+                                            <div class="ms-2">
+                                                <p class="mb-0" style="font-size:small"> 4 days ago</p>
+                                                <p class="mb-0" style="font-size:10px; color:green">2ahUKEwiR6LHsZH4AhVzKbcAHa7VDiMQ2</p>
+                                            </div>
+                                            <a class="btn px-3 mt-auto ms-auto" href="recommend.html">Match Talents</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-show="isSet(3)">
+                            
+                            <div class="row g-5">
+                                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="width: 40%; padding-left: 5%;">
+                                    <p class="d-inline-block border rounded-pill py-1 px-4">Post</p>
+                                    <h1 class="mb-4">Validate Job Opportunity</h1>
+                                    <p class="mb-4">Make use of decentralised technology to get trustworthy prove and detect scams!</p>
+                                    <img class="img-fluid mt-5" style="height: 250px;" src="{% static 'img/newsletter.png' %}">
+                                </div>
+                                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s" style="width: 60%;">
+                                    <div class="bg-light rounded h-100 d-flex align-items-center p-5 mt-5">
+                                        <form>
+                                            <div class="row g-3">
+                                                <div class="col-12 col-sm-6">
+                                                    <input type="text" class="form-control border-0" placeholder="Department" style="height: 55px;">
+                                                </div>
+                                                <div class="col-12 col-sm-6">
+                                                    <select class="form-select border-0" style="height: 55px;">
+                                                        <option selected>Location</option>
+                                                        <option value="1">Tampines</option>
+                                                        <option value="2">Bugis</option>
+                                                        <option value="3">Jurong East</option>
+                                                    </select>
+                                                </div>
+                                                
+                                                <div class="col-12 col-sm-6">
+                                                    <input type="text" class="form-control border-0" placeholder="Job Title" style="height: 55px;">
+                                                </div>
+                                                <div class="col-12 col-sm-6">
+                                                    <input type="number" class="form-control border-0" placeholder="Salary" style="height: 55px;">
+                                                </div>
+                                                
+                                                <!--
+                                                <div class="col-12 col-sm-6">
+                                                    <div class="date" id="date" data-target-input="nearest">
+                                                        <input type="text"
+                                                            class="form-control border-0 datetimepicker-input"
+                                                            placeholder="Choose Date" data-target="#date" data-toggle="datetimepicker" style="height: 55px;">
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-12 col-sm-6">
+                                                    <div class="time" id="time" data-target-input="nearest">
+                                                        <input type="text"
+                                                            class="form-control border-0 datetimepicker-input"
+                                                            placeholder="Choose Date" data-target="#time" data-toggle="datetimepicker" style="height: 55px;">
+                                                    </div>
+                                                </div>
+                                                -->
+                                                <div class="col-12">
+                                                    <textarea class="form-control border-0" rows="5" placeholder="Job Description"></textarea>
+                                                </div>
+                                                <div class="col-12">
+                                                    <button class="btn btn-primary w-100 py-3" type="submit">Post it!</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Service End -->
+{% endblock %}

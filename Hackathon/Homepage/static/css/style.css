@@ -248,6 +248,9 @@ h6,
     left: 3px;
 }
 
+.resume-title{
+    color: #2124B1;
+}
 
 /*** Service ***/
 .service-item {
@@ -302,6 +305,11 @@ h6,
     height: 32px;
 }
 
+.pending{
+    width: 30px;
+    height: 30px;
+}
+
 .service-item p {
     transition: .5s;
 }
@@ -327,6 +335,37 @@ h6,
     z-index: 1;
 }
 
+.talents a.btn {
+    position: relative;
+    display: flex;
+    color: var(--primary);
+    transition: .5s;
+    z-index: 1;
+}
+
+.talents:hover a.btn {
+    color: var(--light);
+}
+
+.talents a.btn::before {
+    position: absolute;
+    content: "";
+    width: 35px;
+    height: 35px;
+    top: 0;
+    left: 0;
+    border-radius: 35px;
+    background: #DDDDDD;
+    transition: .5s;
+    z-index: -1;
+}
+
+.talents:hover a.btn::before {
+    width: 100%;
+    background: var(--primary);
+}
+
+
 .service-item:hover a.btn {
     color: var(--light);
 }
@@ -348,7 +387,6 @@ h6,
     width: 100%;
     background: var(--primary);
 }
-
 
 /*** Testimonial ***/
 .newsletter,

@@ -31,6 +31,7 @@
 
     <!-- Template Stylesheet -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/company.css' %}" rel="stylesheet">
   
 </head>
 <body>
@@ -47,20 +48,18 @@
         <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
             <a href="{% url 'index' %}" class="navbar-brand p-0">
                 <h1 class="m-0"><i class="fa fa-search me-2"></i>Newbility<span class="fs-5">Job Assistant</span></h1>
+                <!-- <img src="img/logo.png" alt="Logo"> -->
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
             </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                {% block menu %}
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="{% url 'index' %}" class="nav-item nav-link active">Home</a>
-                    <a href="{% url 'jobs' %}" class="nav-item nav-link">Jobs</a>
-                    <a href="{% url 'post' %}" class="nav-item nav-link">Post</a>
-                    <a href="{% url 'match' %}" class="nav-item nav-link">Match</a>
-                    <a href="{% url 'login' %}" class="nav-item nav-link">Login</a>
                 </div>
-                {% endblock %}
+                <a href="login.html" class="btn btn-outline-light text-light py-2 px-4 ms-5 m-3">Contact us</a>
             </div>
         </nav>
 
@@ -71,8 +70,8 @@
                     <div class="col-lg-6 text-center text-lg-start">
                         <h1 class="text-white mb-4 animated zoomIn">The leading platform for verified jobs opportunities</h1>
                         <p class="text-white pb-3 animated zoomIn">Find a job, Post a job. We make sure that jobs are authentic and verified by companies themselves.</p>
-                        <a href="login.html" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Login</a>
-                        <a href="signup.html" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Sign Up</a>
+                        <a href="{% url 'login' %}" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Login</a>
+                        <a href="{% url 'signupuser' %}" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Sign Up</a>
                     </div>
                     <div class="col-lg-6 text-center text-lg-start">
                         <img class="img-fluid" src="{% static 'img/hero-new.png' %}" alt="">
@@ -183,6 +182,8 @@
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular.min.js"></script>
     <script src="{% static 'lib/wow/wow.min.js' %}"></script>
     <script src="{% static 'lib/easing/easing.min.js' %}"></script>
     <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
@@ -192,6 +193,8 @@
 
     <!-- Template Javascript -->
     <script src="{% static 'js/main.js' %}"></script> 
+    <script src="{% static 'js/company.js' %}"></script>
+    <script src="{% static 'js/timeline.js' %}"></script>
     <script>
         $('.slider').each(function(e) {
             var slider = $(this),

@@ -70,8 +70,8 @@ def login(request):
 def job(request):
     return render(request, 'jobs.html')
 
-def match(request):
-    return render(request, 'match.html')
+def matchTalents(request):
+    return render(request, 'matchTalents.html')
 
 def post(request):
     return render(request, 'post.html')
@@ -87,7 +87,7 @@ def userpage(request):
 
 def companypage(request):
 
-    return render(request, "signupcompany.html")
+    return render(request, "companypage.html")
 
 
 def option(request):

@@ -1,16 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}<title>Register Page</title>{% endblock %}
-{% block menu %}
-    <div class="navbar-nav ms-auto py-0">
-        <a href="{% url 'index' %}" class="nav-item nav-link">Home</a>
-        <a href="{% url 'jobs' %}" class="nav-item nav-link">Jobs</a>
-        <a href="{% url 'post' %}" class="nav-item nav-link">Post</a>
-        <a href="{% url 'match' %}" class="nav-item nav-link">Match</a>
-        <a href="{% url 'login' %}" class="nav-item nav-link active">Login</a>
-    </div>
 
-{% endblock %}
 {% block top %}
 <div class="container-xxl py-5 bg-primary hero-header mb-5"></div>
 {% endblock %}
@@ -23,62 +14,61 @@
                     <h2 class="mt-2">Register your company with us</h2>
                 </div>
                 <div class="wow fadeInUp" data-wow-delay="0.3s">
-                    {% if form.errors %}
-                        {% for field in form %}
-                            {% for error in field.errors %} 
-                                <div class="alert alert-danger">
-                                        <strong>{{ error|escape }}</strong>
-                                </div>
-                            {% endfor %}
-                        {% endfor %}
-                    {% endif %}
-                    <form method="POST">
-                        {% csrf_token%}
+                    <form>
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    {{ form.first_name }}
+                                    <input type="text" class="form-control" id="companyname" placeholder="Company Name">
                                     <label for="companyname">Registered Company Name</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    {{ form.last_name }}
+                                    <input type="text" class="form-control" id="UEN" placeholder="Unique Entity Number">
                                     <label for="UEN">Unique Entity Number (UEN) </label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    {{ form.Date }}
+                                    <input type="date" class="form-control" id="registereddate" placeholder="DD/MM/YYYY">
                                     <label for="registereddate">Date of Incorporation</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    {{ form.username }}
+                                    <input type="email" id="email" class="form-control" placeholder="name@example.com" />
                                     <label for="email">Company Email Address</label>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-floating">
-                                    {{ form.password1 }}
+                                    <input type="password" id="password" class="form-control" placeholder="Password"/>
                                     <label for="password">Password</label>
                                 </div>
                             </div>
-                            <div class="col-md-12">
-                                <div class="form-floating">
-                                    {{ form.password2 }}
-                                    <label for="password1">Re-enter Password</label>
-                                </div>
-                            </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    {{ form.Documents }}
+                                    <input class="form-control" type="file" id="Businessdocs" multiple />
                                     <label for="Businessdocs" class="form-label">Upload business documents</label>
                                 </div>
                             </div>
+                            <!--
+                            Can't seem to get it to work
+                            https://www.codingnepalweb.com/drag-drop-file-upload-feature-javascript/
                             <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit" value="OK">Sign up</button>
+                                <div class="drag-area">
+                                    <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                                        <header>Drag & Drop to Upload File</header>
+                                        <span>OR</span>
+                                        <button>Browse File</button>
+                                        <input class="form-control" type="file" id="Businessdocs" multiple hidden />
+                                    </div>
+                                    
+                                </div>
+                            -->
+                            <div class="col-12">
+                                <!-- <button class="btn btn-primary w-100 py-3" type="submit">Sign up</button> -->
+                                <a class="btn btn-primary w-100 py-3" href="{% url 'companypage' %}">Sign up</a>
                             </div>
                         </div>
                     </form>

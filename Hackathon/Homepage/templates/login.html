@@ -1,15 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}<title>Login Page</title>{% endblock %}
-{% block menu %}
-    <div class="navbar-nav ms-auto py-0">
-        <a href="{% url 'index' %}" class="nav-item nav-link">Home</a>
-        <a href="{% url 'jobs' %}" class="nav-item nav-link">Jobs</a>
-        <a href="{% url 'post' %}" class="nav-item nav-link">Post</a>
-        <a href="{% url 'match' %}" class="nav-item nav-link">Match</a>
-        <a href="{% url 'login' %}" class="nav-item nav-link active">Login</a>
-    </div>
-{% endblock %}
+
 {% block top %}
 <div class="container-xxl py-5 bg-primary hero-header mb-5"></div>
 {% endblock %}
