@@ -1,9 +1,8 @@
 from django.contrib import messages
-from django.shortcuts import render, redirect, get_object_or_404
-from django.urls import reverse
+from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from .forms import SignupForm, LoginForm
-from django.contrib.auth import authenticate, login
+from .forms import LoginForm
+
 import requests
   
 #Affindi Endpoint
@@ -20,7 +19,8 @@ def index(request):
     return render(request, 'index.html')
 
 def login(request):
-    return render(request, 'login.html')
+    form = LoginForm()
+    return render(request, 'login.html', {'form' : form})
 
 def signup(request):
     return render(request, 'signup.html')
