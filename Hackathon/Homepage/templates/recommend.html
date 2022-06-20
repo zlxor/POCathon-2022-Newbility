@@ -1,31 +1,43 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}<title>Register Page</title>{% endblock %}
-{% block menu %}
-    <div class="navbar-nav ms-auto py-0">
-        <a href="{% url 'index' %}" class="nav-item nav-link">Home</a>
-        <a href="{% url 'jobs' %}" class="nav-item nav-link">Jobs</a>
-        <a href="{% url 'post' %}" class="nav-item nav-link">Post</a>
-        <a href="{% url 'match' %}" class="nav-item nav-link">Match</a>
-        <a href="{% url 'login' %}" class="nav-item nav-link">Login</a>
+{% block title %}<title>Recommended Talents</title>{% endblock %}
+{% block top %}
+<div class="container-xxl position-relative p-0">
+    <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+        <a href="{% url 'index' %}" class="navbar-brand p-0">
+            <h1 class="m-0"><i class="fa fa-search me-2"></i>Newbility<span class="fs-5">Job Assistant</span></h1>
+            <!-- <img src="img/logo.png" alt="Logo"> -->
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+            </div>
+            <a href="https://build.affinidi.com/" class="btn btn-outline-light text-light py-2 px-4 ms-5 m-3">Contact us</a>
+        </div>
+    </nav>
+    <div class="container-xxl py-5 bg-primary hero-header mb-5">
+        
     </div>
-
+</div>
 {% endblock %}
-        {% block top %}
-        <div class="container-xxl py-5 bg-primary hero-header mb-5"></div>
+{% block content %}
         <div class="container-xxl py-5">
             <div class="container px-lg-5">
                 <div class="section-title position-relative text-center pb-2 wow fadeInUp" data-wow-delay="0.1s">
-                    <h6 class="position-relative d-inline text-primary ps-4">Verified</h6>
-                    <h2 class="mt-2">the job opportunity</h2>
+                    <h6 class="position-relative d-inline text-primary ps-4">Match</h6>
+                    <h2 class="mt-2">View talents suitable for the posted position!</h2>
                 </div>
             </div>
         </div>
-        {% endblock %}
-        {% block content %}
-        <div class="d-flex justify-content-center">
-            <div class="col-md-3 wow zoomIn" data-wow-delay="0.1s">
-                <div class="service-item d-flex flex-column rounded">
+
+        <div class="p-4 row">
+            <div class="col-md-3 wow zoomIn" style="margin-left: 3.5rem;" data-wow-delay="0.1s">
+                <div class="service-item d-flex flex-column rounded" style="box-shadow: 0 0 45px rgba(0, 0, 0, .3);">
                     <div class="d-flex">
                         <img class="mb-3 company-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKWgStyZIRMBw2vhADy9q8GTi-MXXmwc0wADdN&s=0" alt="">
                         <img class="mb-3 ms-auto verified" src="https://s1.ax1x.com/2022/06/03/XUj8XR.png" alt="">
@@ -47,82 +59,59 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div style="margin: 20px;" class="row wow zoomIn" data-wow-delay="0.1s">
-            <div class="col-md-2"></div>
-            <img class="col-md-8" src="https://farm5.staticflickr.com/4377/36402397450_02539c7a70_o.png" alt="" alt="">
-            <div class="col-md-2"></div>
-        </div>
-
-        <div class="container-xxl py-5">
-            <div class="container px-lg-5">
-                <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
-                    <h6 class="position-relative d-inline text-primary ps-4">Find More</h6>
-                    <h2 class="mt-2">match your powerful employees !</h2>
+            <div class="col-md-8 owl-carousel testimonial-carousel mt-5">
+                <div class="testimonial-item bg-transparent border rounded p-3" style="color: gray">
+                    <i class="fa fa-quote-left fa-2x mb-3"></i>
+                    <p><b>Skills:</b> Javascript, Python, Java</p>
+                    <p><i class="fa fa-check-square-o"></i> Master in Computer Science from New York University</p>
+                    <p><i class="fa fa-check-square-o"></i> 2-year experience in software development</p>
+                    <div class="d-flex align-items-center">
+                        <img class="img-fluid flex-shrink-0 rounded-circle" src="{% static 'img/testimonial-1.jpg' %}" style="width: 50px; height: 50px;">
+                        <div class="ps-3 talents">
+                            <h6 class="text-primary mb-1">Lingxuan Zhao</h6>
+                            <a class="btn px-3 mt-auto ms-auto" style="font-size: small; color:darkgray" href="#">Invite for Interview</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-
-        <div class="bg-primary testimonial py-5 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="container py-5 px-lg-5">
-                <div class="owl-carousel testimonial-carousel">
-                    <div class="testimonial-item bg-transparent border rounded text-white p-4">
-                        <i class="fa fa-quote-left fa-2x mb-3"></i>
-                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg" style="width: 50px; height: 50px;">
-                            <div class="ps-3">
-                                <h6 class="text-white mb-1">Lingxuan Zhao</h6>
-                                <small>Year2 CS student in NTU </small>
-                            </div>
+                <div class="testimonial-item bg-transparent border rounded p-3" style="color: gray">
+                    <i class="fa fa-quote-left fa-2x mb-3"></i>
+                    <p><b>Skills:</b> Javascript, Python, Java</p>
+                    <p><i class="fa fa-check-square-o"></i> Master in Computer Science from New York University</p>
+                    <p><i class="fa fa-check-square-o"></i> 2-year experience in software development</p>
+                    <div class="d-flex align-items-center">
+                        <img class="img-fluid flex-shrink-0 rounded-circle" src="{% static 'img/testimonial-2.jpg' %}" style="width: 50px; height: 50px;">
+                        <div class="ps-3 talents">
+                            <h6 class="text-primary mb-1">Ng Zhi Quan</h6>
+                            <a class="btn px-3 mt-auto ms-auto" style="font-size: small; color:darkgray" href="#">Invite for Interview</a>
                         </div>
                     </div>
-                    <div class="testimonial-item bg-transparent border rounded text-white p-4">
-                        <i class="fa fa-quote-left fa-2x mb-3"></i>
-                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg" style="width: 50px; height: 50px;">
-                            <div class="ps-3">
-                                <h6 class="text-white mb-1">Ng Zhi Quan</h6>
-                                <small>Profession</small>
-                            </div>
+                </div>
+                <div class="testimonial-item bg-transparent border rounded p-3" style="color: gray">
+                    <i class="fa fa-quote-left fa-2x mb-3"></i>
+                    <p><b>Skills:</b> Javascript, Python, Java</p>
+                    <p><i class="fa fa-check-square-o"></i> Master in Computer Science from New York University</p>
+                    <p><i class="fa fa-check-square-o"></i> 2-year experience in software development</p>
+                    <div class="d-flex align-items-center">
+                        <img class="img-fluid flex-shrink-0 rounded-circle" src="{% static 'img/testimonial-3.jpg' %}" style="width: 50px; height: 50px;">
+                        <div class="ps-3 talents">
+                            <h6 class="text-primary mb-1">Steven Tung</h6>
+                            <a class="btn px-3 mt-auto ms-auto" style="font-size: small; color:darkgray" href="#">Invite for Interview</a>
                         </div>
                     </div>
-                    <div class="testimonial-item bg-transparent border rounded text-white p-4">
-                        <i class="fa fa-quote-left fa-2x mb-3"></i>
-                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg" style="width: 50px; height: 50px;">
-                            <div class="ps-3">
-                                <h6 class="text-white mb-1">Steven Tung</h6>
-                                <small>Profession</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-transparent border rounded text-white p-4">
-                        <i class="fa fa-quote-left fa-2x mb-3"></i>
-                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-4.jpg" style="width: 50px; height: 50px;">
-                            <div class="ps-3">
-                                <h6 class="text-white mb-1">Jiang lei</h6>
-                                <small>Profession</small>
-                            </div>
+                </div>
+                <div class="testimonial-item bg-transparent border rounded p-3" style="color: gray">
+                    <i class="fa fa-quote-left fa-2x mb-3"></i>
+                    <p><b>Skills:</b> Javascript, Python, Java</p>
+                    <p><i class="fa fa-check-square-o"></i> Master in Computer Science from New York University</p>
+                    <p><i class="fa fa-check-square-o"></i> 2-year experience in software development</p>
+                    <div class="d-flex align-items-center">
+                        <img class="img-fluid flex-shrink-0 rounded-circle" src="{% static 'img/testimonial-4.jpg' %}" style="width: 50px; height: 50px;">
+                        <div class="ps-3 talents">
+                            <h6 class="text-primary mb-1">Jiang Lei</h6>
+                            <a class="btn px-3 mt-auto ms-auto" style="font-size: small; color:darkgray" href="#">Invite for Interview</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Testimonial End -->
-
-        <div class="container-xxl py-5 mt-5">
-            <div class="container px-lg-5">
-                <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
-                    <h6 class="position-relative d-inline text-primary ps-4">Connect More</h6>
-                    <h2 class="mt-2">work together to build a Better New World</h2>
-                </div>
-            </div>
-        </div>
-        {% endblock %}
+        {% endblock %} 

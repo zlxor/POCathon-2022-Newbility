@@ -3,14 +3,12 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('register', views.option, name='option'),
-    path('signupuser', views.registeruser, name='signupuser'),
-    path('signupcompany', views.registercompany, name='signupcompany'),
-    path('companypage', views.companypage, name='companypage'),
-    path('jobs', views.job, name='jobs'),
-    path('matchTalents', views.matchTalents, name='matchTalents'),
-    path('post', views.post, name='post'),
     path('login', views.login, name='login'),
-    path('rec', views.rec, name='rec'),
-
+    path('signup', views.signup, name='signup'),
+    path('signupuser', views.signupuser, name='signupuser'),
+    path('signupcompany', views.signupcompany, name='signupcompany'),
+    path('company', views.company, name='company'),
+    path('user', views.user, name='user'),
+    path('jobinfo', views.jobinfo, name='jobinfo'),
+    path('recommend', views.recommend, name='recommend'),
 ]

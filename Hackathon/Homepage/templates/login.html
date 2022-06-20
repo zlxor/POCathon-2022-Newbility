@@ -1,76 +1,95 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}<title>Login Page</title>{% endblock %}
-
 {% block top %}
-<div class="container-xxl py-5 bg-primary hero-header mb-5"></div>
+<div class="container-xxl position-relative p-0">
+    <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+        <a href="{% url 'index' %}" class="navbar-brand p-0">
+            <h1 class="m-0"><i class="fa fa-search me-2"></i>Newbility<span class="fs-5">Job Assistant</span></h1>
+            <!-- <img src="img/logo.png" alt="Logo"> -->
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+            </div>
+            <a href="https://build.affinidi.com/" class="btn btn-outline-light text-light py-2 px-4 ms-5 m-3">Contact us</a>
+        </div>
+    </nav>
+    <div class="container-xxl py-5 bg-primary hero-header mb-5">
+        
+    </div>
+</div>
 {% endblock %}
 {% block content %}
-<div class="container-xxl py-5">
-    <div class="container px-lg-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-7">
-                
-                <div class="wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="row d-flex justify-content-center align-items-center h-100">
-                        <div class="col-12 col-md-8">
-                        <!--<div class="card shadow-2-strong" style="border-radius: 1rem;"> -->
-                            <div class="card-body p-5 text-center">
-                                <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
-                                    <h2 class="mt-2">Login to your account</h2>
-                                </div>
-                                {% if form.errors %}
-                                    {% for field in form %}
-                                        {% for error in field.errors %} 
-                                            <div class="alert alert-danger">
-                                                    <strong>{{ error|escape }}</strong>
-                                            </div>
-                                        {% endfor %}
-                                    {% endfor %}
-                                {% endif %}
-                                <form method="POST">
-                                    {% csrf_token%}
-                                    <div class="row g-3">
-                                        <div class="col-md-12">
-                                            <div class="form-floating">
-                                                {{ form.username }}
-                                                <label for="email">Email</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="form-floating">
-                                                {{ form.password }}
-                                                <label for="password">Password</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <input class="form-check-input" type="checkbox" value="" id="RememberMe" />
-                                            <label class="form-check-label" for="RememberMe"> Remember me </label>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <button class="btn btn-primary w-100 py-3" type="submit">Login</button>
-                                        </div>
-                                    </div>
-                                </form>
-                                
-                                <hr class="my-4">
-                                
-                                <div>
-                                    <p>Don't have an account? 
-                                        <a href="{% url 'option' %}" class="mt-3">Sign Up
-                                        </a>
-                                    </p>
-                                </div>
-
-                                </div>
-                            </div>
+        <!-- Contact Start -->
+        <div class="container-xxl py-5">
+            <div class="container px-lg-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7">
                         
+						<div class="wow fadeInUp" data-wow-delay="0.3s">
+							<div class="row d-flex justify-content-center align-items-center h-100">
+								<div class="col-12 col-md-8">
+								<!--<div class="card shadow-2-strong" style="border-radius: 1rem;"> -->
+									<div class="card-body p-5 text-center">
+										<div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
+											<h2 class="mt-2">Login to your account</h2>
+										</div>
+										<form>
+											<div class="row g-3">
+                                                <div class="col-md-12">
+                                                    <select class="form-select" style="height: 55px;">
+                                                        <option selected>Role</option>
+                                                        <option value="Option 1">Company</option>
+                                                        <option value="Option 2">Individual</option>
+                                                    </select>
+                                                </div>
+												<div class="col-md-12">
+													<div class="form-floating">
+														<input type="email" id="email" class="form-control" placeholder="name@example.com" />
+														<label for="email">Email</label>
+													</div>
+												</div>
+												<div class="col-md-12">
+													<div class="form-floating">
+														<input type="password" id="password" class="form-control" placeholder="Password"/>
+														<label for="password">Password</label>
+													</div>
+												</div>
+												<div class="col-md-12">
+													<input class="form-check-input" type="checkbox" value="" id="RememberMe" />
+													<label class="form-check-label" for="RememberMe"> Remember me </label>
+												</div>
+
+												<div class="col-12">
+													<!-- <button class="btn btn-primary w-100 py-3" type="submit">Login</button> -->
+                                                    <a class="btn btn-primary w-100 py-3" href="{% url 'company' %}">Login</a>
+												</div>
+											</div>
+										</form>
+										
+										<hr class="my-4">
+										
+										<div>
+											<p>Don't have an account? 
+												<a href="{% url 'signup' %}" class="mt-3">Sign Up
+												</a>
+											</p>
+										</div>
+
+										</div>
+									</div>
+								<!--</div>-->
+							</div>
+						</div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-        
-{% endblock %}        
+        <!-- Contact End -->
+        {% endblock %} 

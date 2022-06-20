@@ -32,6 +32,8 @@
     <!-- Template Stylesheet -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <link href="{% static 'css/company.css' %}" rel="stylesheet">
+    <link href="{% static 'css/notification.css' %}" rel="stylesheet">
+    <link href="{% static 'css/messages.css' %}" rel="stylesheet">
   
 </head>
 <body>
@@ -59,8 +61,9 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
                 </div>
-                <a href="login.html" class="btn btn-outline-light text-light py-2 px-4 ms-5 m-3">Contact us</a>
+                <a href="https://build.affinidi.com/" class="btn btn-outline-light text-light py-2 px-4 ms-5 m-3">Contact us</a>
             </div>
+            
         </nav>
 
         {% block top %}
@@ -71,7 +74,7 @@
                         <h1 class="text-white mb-4 animated zoomIn">The leading platform for verified jobs opportunities</h1>
                         <p class="text-white pb-3 animated zoomIn">Find a job, Post a job. We make sure that jobs are authentic and verified by companies themselves.</p>
                         <a href="{% url 'login' %}" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Login</a>
-                        <a href="{% url 'signupuser' %}" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Sign Up</a>
+                        <a href="{% url 'signup' %}" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Sign Up</a>
                     </div>
                     <div class="col-lg-6 text-center text-lg-start">
                         <img class="img-fluid" src="{% static 'img/hero-new.png' %}" alt="">
