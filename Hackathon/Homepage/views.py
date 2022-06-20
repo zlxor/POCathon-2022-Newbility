@@ -42,9 +42,9 @@ def login(request):
             #}
             #r = requests.post(url = LOGIN, params = Payload, headers = API_KEY)
             #print(r)
-
+            print(form.cleaned_data['Choice'])
             if(form.cleaned_data['Choice'] == '1'):
-                for Data in Individual.objects.all():
+                for Data in Company.objects.all():
                     if(Data.Email == form.cleaned_data['Email']):
                         if(Data.Password == form.cleaned_data['Password']):
                             return HttpResponseRedirect('company')
