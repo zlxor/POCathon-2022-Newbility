@@ -84,26 +84,22 @@
 	position: relative;
 	height: 120px;
 	width: 100%;
-	/*  max-width: 425px; */
 	margin: 0 auto;
 }
 
 .cd-horizontal-timeline .events-wrapper {
 	position: relative;
 	height: 100%;
-	margin: 0 40px;
 	overflow: hidden;
 }
 
 .cd-horizontal-timeline .events-wrapper::after,
 .cd-horizontal-timeline .events-wrapper::before {
-	/* these are used to create a shadow effect at the sides of the timeline */
 	content: '';
 	position: absolute;
 	z-index: 2;
 	top: 0;
 	height: 100%;
-	/* width: 20px; */
 }
 
 .cd-horizontal-timeline .events-wrapper::before {
@@ -122,12 +118,10 @@
 	/* this is the grey line/timeline */
 	position: absolute;
 	z-index: 1;
-	left: 0;
+	left: -160px;
 	top: 49px;
 	height: 2px;
     margin-top: 30px;
-    margin-left: 150px;
-	/* width will be set using JavaScript */
 	background: #dfdfdf;
 	-webkit-transition: -webkit-transform 0.4s;
 	-moz-transition: -moz-transform 0.4s;
@@ -166,7 +160,6 @@
 	font-size: 1.3rem;
 	padding-bottom: 15px;
 	color: #383838;
-	/* fix bug on Safari - text flickering while timeline translates */
 	-webkit-transform: translateZ(0);
 	-moz-transform: translateZ(0);
 	-ms-transform: translateZ(0);
@@ -175,7 +168,6 @@
 }
 
 .cd-horizontal-timeline .events a::after {
-	/* this is used to create the event spot */
 	content: '';
 	position: absolute;
 	left: 50%;

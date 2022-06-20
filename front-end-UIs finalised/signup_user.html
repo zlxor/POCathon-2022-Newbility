@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Newbility</title>
+    <title>Sign Up for User</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -64,24 +64,88 @@
             <div class="container-xxl bg-primary hero-header mb-5" style="padding-top: 75px;">
             </div>
         </div>
-        
         <!-- Navbar & Hero End -->
 
-        <!-- 404 Start -->
-        <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="container px-lg-5 text-center">
+
+        <!-- Contact Start -->
+        <div class="container-xxl py-5">
+            <div class="container px-lg-5">
                 <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                        <i class="bi bi-exclamation-triangle display-1 text-primary"></i>
-                        <h1 class="display-1">404</h1>
-                        <h1 class="mb-4">Page Not Found</h1>
-                        <p class="mb-4">We’re sorry, the page you have looked for does not exist in our website! Maybe go to our home page or try to use a search?</p>
-                        <a class="btn btn-primary rounded-pill py-3 px-5" href="index.html">Go Back To Home</a>
+                    <div class="col-lg-7">
+                        <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
+                            <h2 class="mt-2">Sign up for your account</h2>
+                        </div>
+                        <div class="wow fadeInUp" data-wow-delay="0.3s">
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="username" placeholder="Username">
+                                            <label for="username">Username</label>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="UEN" placeholder="Unique Entity Number">
+                                            <label for="UEN">Unique Entity Number (UEN) </label>
+                                        </div>
+                                    </div> -->
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <input type="text" id="phone" class="form-control" placeholder="xxxxxxxx" />
+                                            <label for="phone">Phone</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <input type="email" id="email" class="form-control" placeholder="name@example.com" />
+                                            <label for="email">Email Address</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <input type="text" id="address" class="form-control" placeholder="Address" />
+                                            <label for="address">Address</label>
+                                        </div>
+                                    </div>
+									<div class="col-md-12">
+										<div class="form-floating">
+											<input type="password" id="password" class="form-control" placeholder="Password"/>
+											<label for="password">Password</label>
+										</div>
+									</div>
+									<div class="col-12">
+                                        <div class="form-floating">
+											<input class="form-control" type="file" id="Resume" multiple />
+											<label for="Resume" class="form-label">Upload your resume</label>
+                                        </div>
+                                    </div>
+									<!--
+									Can't seem to get it to work
+									https://www.codingnepalweb.com/drag-drop-file-upload-feature-javascript/
+									<div class="col-12">
+                                        <div class="drag-area">
+											<div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+												<header>Drag & Drop to Upload File</header>
+												<span>OR</span>
+												<button>Browse File</button>
+												<input class="form-control" type="file" id="Businessdocs" multiple hidden />
+											</div>
+											
+										</div>
+									-->
+                                    <div class="col-12">
+                                        <!-- <button class="btn btn-primary w-100 py-3" type="submit">Sign up</button> -->
+                                        <a class="btn btn-primary w-100 py-3" href="checking.html">Sign up</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- 404 End -->
+        <!-- Contact End -->
         
 
         <!-- Footer Start -->
@@ -187,9 +251,11 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
+	
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+	<script src="js/draganddrop.js"></script>
 </body>
 
 </html>

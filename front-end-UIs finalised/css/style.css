@@ -338,13 +338,14 @@ h6,
 .talents a.btn {
     position: relative;
     display: flex;
-    color: var(--primary);
+    color: darkgray;
     transition: .5s;
     z-index: 1;
 }
 
 .talents:hover a.btn {
-    color: var(--light);
+    color: white;;
+    /* color: var(--light); */
 }
 
 .talents a.btn::before {
@@ -422,6 +423,9 @@ h6,
     color: var(--dark) !important;
 }
 
+.testimonial-carousel .owl-item.center .testimonial-item .btn:hover {
+    color: white !important;
+}
 
 /*** Team ***/
 .team-item {

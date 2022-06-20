@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Sign up</title>
+    <title>Sign Up for Company</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -48,7 +48,6 @@
             <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
                 <a href="index.html" class="navbar-brand p-0">
                     <h1 class="m-0"><i class="fa fa-search me-2"></i>Newbility<span class="fs-5">Job Assistant</span></h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
@@ -59,19 +58,10 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
                     </div>
-					<a href="login.html" class="btn btn-outline-light text-light py-2 px-4 ms-5 m-3">Contact us</a>
+					<a href="https://www.lemmatree.com/" class="btn btn-outline-light text-light py-2 px-4 ms-5 m-3">Contact us</a>
                 </div>
             </nav>
-
-            <div class="container-xxl py-5 bg-primary hero-header mb-5">
-                <!--<div class="container my-5 py-5 px-lg-5">
-                    <div class="row g-5 py-5">
-                        <div class="col-12 text-center">
-                            <h1 class="text-white animated zoomIn">Login</h1>
-                            
-                        </div>
-                    </div>z
-                </div> -->
+            <div class="container-xxl bg-primary hero-header mb-5" style="padding-top: 75px;">
             </div>
         </div>
         <!-- Navbar & Hero End -->
@@ -83,15 +73,45 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-7">
                         <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
-                            <h2 class="mt-2">Register Your Account</h2>
+                            <h2 class="mt-2">Register your company with us</h2>
                         </div>
                         <div class="wow fadeInUp" data-wow-delay="0.3s">
                             <form>
                                 <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="companyname" placeholder="Company Name">
+                                            <label for="companyname">Company Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="UEN" placeholder="Unique Entity Number">
+                                            <label for="UEN">Unique Entity Number (UEN) </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <input type="text" id="industry" class="form-control" placeholder="Industry" />
+                                            <label for="industry">Company Industry</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <input type="text" id="phone" class="form-control" placeholder="xxxxxxxx" />
+                                            <label for="phone">Company Phone</label>
+                                        </div>
+                                    </div>
                                     <div class="col-12">
                                         <div class="form-floating">
                                             <input type="email" id="email" class="form-control" placeholder="name@example.com" />
-                                            <label for="email">Email Address</label>
+                                            <label for="email">Company Email Address</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <input type="text" id="address" class="form-control" placeholder="Company Address" />
+                                            <label for="address">Company Address</label>
                                         </div>
                                     </div>
 									<div class="col-md-12">
@@ -103,7 +123,7 @@
 									<div class="col-12">
                                         <div class="form-floating">
 											<input class="form-control" type="file" id="Businessdocs" multiple />
-											<label for="Businessdocs" class="form-label">Upload Your Resume</label>
+											<label for="Businessdocs" class="form-label">Upload business documents</label>
                                         </div>
                                     </div>
 									<!--
@@ -122,7 +142,7 @@
 									-->
                                     <div class="col-12">
                                         <!-- <button class="btn btn-primary w-100 py-3" type="submit">Sign up</button> -->
-                                        <a class="btn btn-primary w-100 py-3" href="user.html">Sign up</a>
+                                        <a class="btn btn-primary w-100 py-3" href="checking.html">Sign up</a>
                                     </div>
                                 </div>
                             </form>
@@ -140,9 +160,15 @@
                 <div class="row g-5">
                     <div class="col-md-6 col-lg-3">
                         <h5 class="text-white mb-4">Get In Touch</h5>
-                        <p><i class="fa fa-map-marker-alt me-3"></i>50 Nanyang Avenue, Singapore 639798</p>
                         <!-- <p><i class="fa fa-phone-alt me-3"></i>(+65) 6123 4567</p> -->
-                        <p><i class="fa fa-envelope me-3"></i>Contact@Newbility.com</p>
+                        <div class="row">
+                            <i class="fa fa-map-marker col-md-1 mt-1"></i>
+                            <p class="col-md-11">50 Nanyang Avenue, Singapore 639798</p>
+                        </div>
+                        <div class="row">
+                            <i class="fa fa-envelope col-md-1  mt-1"></i>
+                            <p class="col-md-11">Contact@Newbility.com</p>
+                        </div>
                         <div class="d-flex pt-2">
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
@@ -154,8 +180,9 @@
                     <div class="col-md-6 col-lg-3">
                         <h5 class="text-white mb-4">Quick Links</h5>
                         <a class="btn btn-link" href="index.html">Home</a>
-                        <a class="btn btn-link" href="jobs.html">Job List</a>
-                        <a class="btn btn-link" href="match.html">Get a Job</a>
+                        <a class="btn btn-link" href="login.html">Login</a>
+                        <a class="btn btn-link" href="signup.html">Sign Up</a>
+                        <a class="btn btn-link" href="https://www.lemmatree.com/">Contact Us</a>
 
                     </div>
                     <div class="col-md-6 col-lg-3">

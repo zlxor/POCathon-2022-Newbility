@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Sign up</title>
+    <title>Sign Up</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -30,6 +30,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/card.css" rel="stylesheet">
 </head>
 
 <body>
@@ -48,7 +49,6 @@
             <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
                 <a href="index.html" class="navbar-brand p-0">
                     <h1 class="m-0"><i class="fa fa-search me-2"></i>Newbility<span class="fs-5">Job Assistant</span></h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
@@ -59,19 +59,10 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
                     </div>
-					<a href="login.html" class="btn btn-outline-light text-light py-2 px-4 ms-5 m-3">Contact us</a>
+					<a href="https://www.lemmatree.com/" class="btn btn-outline-light text-light py-2 px-4 ms-5 m-3">Contact us</a>
                 </div>
             </nav>
-
-            <div class="container-xxl py-5 bg-primary hero-header mb-5">
-                <!--<div class="container my-5 py-5 px-lg-5">
-                    <div class="row g-5 py-5">
-                        <div class="col-12 text-center">
-                            <h1 class="text-white animated zoomIn">Login</h1>
-                            
-                        </div>
-                    </div>z
-                </div> -->
+            <div class="container-xxl bg-primary hero-header mb-5" style="padding-top: 75px;">
             </div>
         </div>
         <!-- Navbar & Hero End -->
@@ -81,69 +72,48 @@
         <div class="container-xxl py-5">
             <div class="container px-lg-5">
                 <div class="row justify-content-center">
-                    <div class="col-lg-7">
+                    <div class="col-lg-10">
                         <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
-                            <h2 class="mt-2">Register your company with us</h2>
+                            <h2 class="mt-2">Choose your account mode</h2>
                         </div>
                         <div class="wow fadeInUp" data-wow-delay="0.3s">
-                            <form>
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="text" class="form-control" id="companyname" placeholder="Company Name">
-                                            <label for="companyname">Registered Company Name</label>
+                            <div class="card_body">
+                                <div id="card" class="card">
+                                    <h1 class="card__title">User Mode</h1>
+                                    <div class="card__body">
+                                        <div class="row justify-content-center">
+                                            <div class="col-lg-10">
+                                                <i class="icon fa fa-address-card" aria-hidden="true"></i>
+                                            </div>
+                                            
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="text" class="form-control" id="UEN" placeholder="Unique Entity Number">
-                                            <label for="UEN">Unique Entity Number (UEN) </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-floating">
-                                            <input type="date" class="form-control" id="registereddate" placeholder="DD/MM/YYYY">
-                                            <label for="registereddate">Date of Incorporation</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-floating">
-                                            <input type="email" id="email" class="form-control" placeholder="name@example.com" />
-                                            <label for="email">Company Email Address</label>
-                                        </div>
-                                    </div>
-									<div class="col-md-12">
-										<div class="form-floating">
-											<input type="password" id="password" class="form-control" placeholder="Password"/>
-											<label for="password">Password</label>
-										</div>
-									</div>
-									<div class="col-12">
-                                        <div class="form-floating">
-											<input class="form-control" type="file" id="Businessdocs" multiple />
-											<label for="Businessdocs" class="form-label">Upload business documents</label>
-                                        </div>
-                                    </div>
-									<!--
-									Can't seem to get it to work
-									https://www.codingnepalweb.com/drag-drop-file-upload-feature-javascript/
-									<div class="col-12">
-                                        <div class="drag-area">
-											<div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-												<header>Drag & Drop to Upload File</header>
-												<span>OR</span>
-												<button>Browse File</button>
-												<input class="form-control" type="file" id="Businessdocs" multiple hidden />
-											</div>
-											
-										</div>
-									-->
-                                    <div class="col-12">
-                                        <!-- <button class="btn btn-primary w-100 py-3" type="submit">Sign up</button> -->
-                                        <a class="btn btn-primary w-100 py-3" href="checking.html">Sign up</a>
-                                    </div>
+                                    <ol class="card__list">
+                                        <li class="card__list__item">auto-generate verified profile and resume</li>
+                                        <li class="card__list__item">match massive verified job opportunities</li>
+                                        <li class="card__list__item">connect with wonderful companies </li>
+                                    </ol>
+                                    <a href="signup_user.html" class="card__button">Sign Up</a>
                                 </div>
-                            </form>
+                                
+                                <div id="advanced" class="card">
+                                    <h1 class="card__title">Company Mode</h1>
+                                    <div class="card__body">
+                                        <div class="row justify-content-center">
+                                            <div class="col-lg-10">
+                                                <i class="icon fa fa-university" aria-hidden="true"></i>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <ol class="card__list">
+                                        <li class="card__list__item">auto-generate verified profile and certificate</li>
+                                        <li class="card__list__item">post verified job opportunities</li>
+                                        <li class="card__list__item">connect with powerful talents</li>
+                                    </ol>
+                                    <a href="signup_company.html" class="card__button">Sign Up</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -158,9 +128,15 @@
                 <div class="row g-5">
                     <div class="col-md-6 col-lg-3">
                         <h5 class="text-white mb-4">Get In Touch</h5>
-                        <p><i class="fa fa-map-marker-alt me-3"></i>50 Nanyang Avenue, Singapore 639798</p>
                         <!-- <p><i class="fa fa-phone-alt me-3"></i>(+65) 6123 4567</p> -->
-                        <p><i class="fa fa-envelope me-3"></i>Contact@Newbility.com</p>
+                        <div class="row">
+                            <i class="fa fa-map-marker col-md-1 mt-1"></i>
+                            <p class="col-md-11">50 Nanyang Avenue, Singapore 639798</p>
+                        </div>
+                        <div class="row">
+                            <i class="fa fa-envelope col-md-1  mt-1"></i>
+                            <p class="col-md-11">Contact@Newbility.com</p>
+                        </div>
                         <div class="d-flex pt-2">
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
@@ -172,8 +148,9 @@
                     <div class="col-md-6 col-lg-3">
                         <h5 class="text-white mb-4">Quick Links</h5>
                         <a class="btn btn-link" href="index.html">Home</a>
-                        <a class="btn btn-link" href="jobs.html">Job List</a>
-                        <a class="btn btn-link" href="match.html">Get a Job</a>
+                        <a class="btn btn-link" href="login.html">Login</a>
+                        <a class="btn btn-link" href="signup.html">Sign Up</a>
+                        <a class="btn btn-link" href="https://www.lemmatree.com/">Contact Us</a>
 
                     </div>
                     <div class="col-md-6 col-lg-3">
