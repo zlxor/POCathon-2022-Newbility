@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from .forms import LoginForm
+from .forms import LoginForm, UserSignupForm, CompanySignupForm, PostJobs
 
 import requests
   
@@ -26,16 +26,19 @@ def signup(request):
     return render(request, 'signup.html')
 
 def signupuser(request):
-    return render(request, 'individual_signup.html')
+    form = UserSignupForm()
+    return render(request, 'individual_signup.html', {'form' : form})
 
 def signupcompany(request):
-    return render(request, 'company_signup.html')
+    form = CompanySignupForm()
+    return render(request, 'company_signup.html', {'form' : form})
 
 def user(request):
     return render(request, 'user.html')
 
 def company(request):
-    return render(request, 'company.html')
+    form = PostJobs()
+    return render(request, 'company.html', {'form' : form})
 
 def jobinfo(request):
     return render(request, 'job_display.html')

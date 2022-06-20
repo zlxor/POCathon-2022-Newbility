@@ -30,6 +30,7 @@
 }
 
 .companyBtn .btn {
+    padding-left: 10px;
     position: relative;
     display: flex;
     color: var(--primary);
