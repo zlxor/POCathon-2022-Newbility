@@ -40,7 +40,13 @@
 										<div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
 											<h2 class="mt-2">Login to your account</h2>
 										</div>
+										{% if msg %}
+										<div class="alert alert-danger">
+											<strong>{{ msg | escape }}</strong>
+										</div>
+										{% endif %}
 										<form method="POST">
+											{% csrf_token %}
 											<div class="row g-3">
                                                 <div class="col-md-12">
 													<div class="form-floating">
@@ -49,13 +55,13 @@
                                                 </div>
 												<div class="col-md-12">
 													<div class="form-floating">
-														{{ form.username }}
+														{{ form.Email }}
 														<label for="email">Email</label>
 													</div>
 												</div>
 												<div class="col-md-12">
 													<div class="form-floating">
-														{{ form.password }}
+														{{ form.Password }}
 														<label for="password">Password</label>
 													</div>
 												</div>
@@ -63,10 +69,8 @@
 													<input class="form-check-input" type="checkbox" value="" id="RememberMe" />
 													<label class="form-check-label" for="RememberMe"> Remember me </label>
 												</div>
-
 												<div class="col-12">
-													<!-- <button class="btn btn-primary w-100 py-3" type="submit">Login</button> -->
-                                                    <a class="btn btn-primary w-100 py-3" href="{% url 'company' %}">Login</a>
+													<button class="btn btn-primary w-100 py-3" type="submit" value='OK'>Login</button>
 												</div>
 											</div>
 										</form>

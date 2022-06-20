@@ -34,7 +34,17 @@
                     <h2 class="mt-2">Register your company with us</h2>
                 </div>
                 <div class="wow fadeInUp" data-wow-delay="0.3s">
+                    {% if form.errors %}
+                        {% for field in form %}
+                            {% for error in field.errors %} 
+                                <div class="alert alert-danger">
+                                        <strong>{{ error|escape }}</strong>
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                    {% endif %}
                     <form method="POST">
+                        {% csrf_token %}
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
@@ -85,8 +95,7 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <!-- <button class="btn btn-primary w-100 py-3" type="submit">Sign up</button> -->
-                                <a class="btn btn-primary w-100 py-3" href="{% url 'login' %}">Sign up</a>
+                                <button class="btn btn-primary w-100 py-3" type="submit">Sign up</button>
                             </div>
                         </div>
                     </form>
