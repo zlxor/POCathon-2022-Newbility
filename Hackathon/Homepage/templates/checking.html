@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}<title>Company Sign up Page</title>{% endblock %}
+{% block top %}
+<div class="container-xxl position-relative p-0">
+    <div class="container-xxl py-5 bg-primary hero-header mb-5" style="padding-bottom: 0rem !important;">
+        <div class="container my-5 py-5 px-lg-5" style="margin-bottom: 0rem !important;">
+            <div class="row g-5 py-5">
+                <div class="col-12 text-center">
+                    <h1 class="text-white animated zoomIn">Your Details are in the Checking process...</h1>
+                    <hr class="bg-white mx-auto mt-0" style="width: 90px;">
+                    <p class="text-white">please wait for days ~ 
+                        <!-- <br>verify its authencity. -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+
+<div class="container">
+    <div class="row g-5">
+        <!-- <div style="height: 200px;"></div> -->
+        <div class="timeline-body">
+            <div class="container experience">
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <!-- <h4>TIMELINE</h4> -->
+        
+                        <section class="cd-horizontal-timeline container">
+                            <div class="timeline">
+                                <div class="events-wrapper">
+                                <div class="events">
+                                    <ol>
+                                        <li><a href="#0" data-date="01/05/2015" class="selected"><i class="fa fa-upload" aria-hidden="true"></i>
+                                        <li><a href="#0" data-date="01/04/2014"><i class="fa fa-spinner" aria-hidden="true"></i></a></li>
+                                        <li><a href="#0" data-date="01/02/2013"><i class="fa fa-address-card" aria-hidden="true"></i></a></li>
+                                    </ol>
+        
+                                    <span class="filling-line" aria-hidden="true"></span>
+                                </div> <!-- .events -->
+                            </div> <!-- .events-wrapper -->
+                            </div> <!-- .timeline -->
+        
+                            <div class="events-content">
+                                <ol>
+                                    <li class="selected" data-date="01/05/2015">
+                                        <h5>Uploaded Documents </h5> 
+                                        <em>June 2022</em>
+                                            <!-- <p><strong>Team Manager</strong><br>
+                                            Ensure all tasks are handled along with project management.</p> -->
+                                            <!-- <br> -->
+                                        <!-- <p><strong>Front End Developer & Content Administrator </strong><br>Responsible for managing the content and retail products of diverse websites within and mobile applications, as well as its maintenance and reporting, development of Wordpress websites, along with newsletters for clients.</p> -->
+                                        <p> <strong>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</strong>  Harum minima quis ipsa pariatur consequatur tenetur sapiente earum maiores, officiis voluptatem at sit non esse accusantium aspernatur aliquam, eligendi voluptas dolore?</p>
+                                    </li>
+        
+                                    <li data-date="01/04/2014">
+                                        <h5>Credentials Reviewing</h5>
+                                        <em>June 2022 - Present</em>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, voluptatem magni. Cum consequatur inventore aliquid minus, architecto natus debitis, blanditiis vel vero maiores, assumenda dolorum id nulla praesentium quas adipisci?</p>
+                                    </li>
+        
+                                    <li data-date="01/02/2013">
+                                        <h5>Account Open</h5>
+                                        <em>waiting for reviewing</em>
+                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In, laboriosam! Laudantium ex assumenda ducimus suscipit fugit eveniet quasi sequi incidunt sit nisi laboriosam, tempora perferendis qui minus voluptates nesciunt voluptatem.</p>
+                                    </li>
+                                </ol>
+                            </div> <!-- .events-content -->
+                        </section>
+        
+                    </div> <!-- end div experience -->
+                </div> <!-- end row experience -->
+            </div> <!-- end container experience -->
+        
+            <!-- end work experience -->
+        </div>
+        <!-- <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="width: 40%; padding-left: 5%;">
+            <p class="d-inline-block border rounded-pill py-1 px-4">Post</p>
+            <h1 class="mb-4">Validate Job Opportunity</h1>
+            <p class="mb-4">Make use of decentralised technology to get trustworthy prove and detect scams!</p>
+            <img class="img-fluid mt-5" style="height: 250px;" src="img/newsletter.png">
+        </div>
+        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s" style="width: 60%;">
+            <div class="bg-light rounded h-100 d-flex align-items-center p-5">
+                <form>
+                    <div class="row g-3">
+                        <div class="col-12 col-sm-6">
+                            <input type="text" class="form-control border-0" placeholder="Company Name" style="height: 55px;">
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <select class="form-select border-0" style="height: 55px;">
+                                <option selected>Location</option>
+                                <option value="1">Tampines</option>
+                                <option value="2">Bugis</option>
+                                <option value="3">Jurong East</option>
+                            </select>
+                        </div>
+                        
+                        <div class="col-12 col-sm-6">
+                            <input type="text" class="form-control border-0" placeholder="Job Title" style="height: 55px;">
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <input type="number" class="form-control border-0" placeholder="Salary" style="height: 55px;">
+                        </div>
+                        
+                        <div class="col-12">
+                            <textarea class="form-control border-0" rows="5" placeholder="Job Description"></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary w-100 py-3" type="submit">Post it!</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div> -->
+    </div>
+</div>
+{% endblock %} 
