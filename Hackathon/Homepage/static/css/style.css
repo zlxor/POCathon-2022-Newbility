@@ -200,6 +200,10 @@ h6,
     background-repeat: no-repeat;
 }
 
+.showbox{
+    /* border-radius: 10px; */
+    box-shadow: 2px 2px 10px #777777;
+}
 
 /*** Section Title ***/
 .section-title::before {
