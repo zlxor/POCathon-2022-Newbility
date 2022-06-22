@@ -72,7 +72,7 @@ def signupuser(request):
             #r = requests.post(url = SIGNUP, params = Payload, headers = API_KEY)
             #print(r)
             form.save()
-            return HttpResponseRedirect('login')
+            return HttpResponseRedirect('checking')
         else:
             print(form.errors)
     else:
@@ -91,7 +91,7 @@ def signupcompany(request):
             #r = requests.post(url = SIGNUP, params = Payload, headers = API_KEY)
             #print(r)
             form.save()
-            return HttpResponseRedirect('login')
+            return HttpResponseRedirect('checking')
         else:
             print(form.errors)
     else:
