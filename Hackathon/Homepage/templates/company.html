@@ -97,9 +97,9 @@
                             <div class="row g-4">
                                 <!-- This is the display box -->
                                 {% for UJob in NotVerified %}
-                                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
+                                <div class="col-lg-4 col-md-6 wow zoomIn jobWaitingForVerify" data-wow-delay="0.1s">
                                     <div class="service-item2 d-flex flex-column rounded">
-                                        <div class="d-flex">
+                                        <div class="d-flex imgBlock">
                                             <img class="mb-3 company-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKWgStyZIRMBw2vhADy9q8GTi-MXXmwc0wADdN&s=0" alt="">
                                         </div>
                                         <h5 class="mb-1">{{ UJob.JobTitle }}</h5>
@@ -114,7 +114,7 @@
                                                 {% endfor %}
                                             {% endwith %}
                                         </ul>
-                                        <div class="d-flex">
+                                        <div class="d-flex matchTalents">
                                             <div class="ms-2">
                                                 <p class="mb-0" style="font-size:small"> 5 days ago</p>
                                             </div>
@@ -134,7 +134,7 @@
                                 <h6 class="position-relative text-primary ps-4">Verified Job Opportunities</h6>
                             </div>
                             {% if Verified %}
-                            <div class="row g-4">
+                            <div class="row g-4 jobVerified">
                                 <!-- This is the display box -->
                                 {% for Job in Verified %}
                                 <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
@@ -159,7 +159,7 @@
                                                 <p class="mb-0" style="font-size:small"> 5 days ago</p>
                                                 <p class="mb-0" style="font-size:10px; color:green">{{ Job.Hash }}</p>
                                             </div>
-                                            <a class="btn px-3 mt-auto ms-auto" href="{% url 'recommend' %}">Match Talents</a>
+                                            <a class="btn px-3 mt-auto ms-auto matchTalentsBtn" href="{% url 'recommend' %}">Match Talents</a>
                                         </div>
                                     </div>
                                 </div>
@@ -191,20 +191,8 @@
                                                 </div>
                                                 <div class="col-12 col-sm-6">
                                                     <div class="form-floating">
-                                                        {{ form.Company }}
-                                                        <label for="companyname">Company Name</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-12 col-sm-6">
-                                                    <div class="form-floating">
                                                         {{ form.Salary }}
                                                         <label for="salary">Salary</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-12 col-sm-6">
-                                                    <div class="form-floating">
-                                                        {{ form.Source }}
-                                                        <label for="source">Source</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
@@ -220,7 +208,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
-                                                    <button class="btn btn-primary w-100 py-3" type="submit">Post it</button>
+                                                    <button class="btn btn-primary w-100 py-3" id="postBtn" onclick="console.log(2)" type="submit">Post it</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -235,4 +223,6 @@
         </div>
     </div>
 </div>
+
     {% endblock %} 
+
