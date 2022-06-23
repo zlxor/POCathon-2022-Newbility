@@ -47,3 +47,5 @@ class PostJobs(forms.ModelForm):
         fields = '__all__'
         # exclude = ['Company', 'Source']
 
+class Verification(forms.Form):
+    VerificationCode = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control'}), required=True)

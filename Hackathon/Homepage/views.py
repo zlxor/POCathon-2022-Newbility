@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from .forms import LoginForm, UserSignupForm, CompanySignupForm, PostJobs
+from .forms import LoginForm, UserSignupForm, CompanySignupForm, PostJobs, Verification
 from django.views.decorators.csrf import csrf_exempt  
 from .models import JobListing, Company, Individual, VerifiedJobListing
 import requests
@@ -17,9 +17,11 @@ else:
 
 #Affindi Endpoint
 SIGNUP = "https://cloud-wallet-api.prod.affinity-project.org/api/v1/users/signup"
+SIGNUPCONFIRM = "https://cloud-wallet-api.prod.affinity-project.org/api/v1/users/signup/confirm"
 LOGIN = 'https://cloud-wallet-api.prod.affinity-project.org/api/v1/users/login'
 #API key
-API_KEY = {'Api-Key' :"ede388293715a2b2da022caea7819beb5a61eb72e3b58d92b472112663b86055"}
+API_KEY = {'Api-Key' :"ede388293715a2b2da022caea7819beb5a61eb72e3b58d92b472112663b86055",
+           "Content-Type": "application/json"}
 
   
 # sending post request and saving response as response object
@@ -72,26 +74,29 @@ def signupuser(request):
             #r = requests.post(url = SIGNUP, params = Payload, headers = API_KEY)
             #print(r)
             form.save()
-            return HttpResponseRedirect('checking')
+            return HttpResponseRedirect('login')
         else:
             print(form.errors)
     else:
         form = UserSignupForm()
         
     return render(request, 'individual_signup.html', {'form' : form})
-
+Token = ""
 def signupcompany(request):
     if request.method == 'POST':
         form = CompanySignupForm(request.POST)
         if(form.is_valid()):
-            #Payload = {
-            #    "username": form.cleaned_data['Email'],
-            #    "password": form.cleaned_data['Password']
-            #}
-            #r = requests.post(url = SIGNUP, params = Payload, headers = API_KEY)
-            #print(r)
+            Payload = {
+                "username": form.cleaned_data['Email'],
+                "password": form.cleaned_data['Password']
+            }
+            print(form.cleaned_data['Email'], form.cleaned_data['Password'])
+            APIresponse = requests.post(url = SIGNUP, json = Payload, headers = API_KEY)
+            global Token 
+            Token = APIresponse.text
+            print(Token)
             form.save()
-            return HttpResponseRedirect('checking')
+            return HttpResponseRedirect('verification')
         else:
             print(form.errors)
     else:
@@ -111,6 +116,31 @@ def company(request):
         Verified = VerifiedJobListing.objects.all()
         NotVerified = JobListing.objects.all()
     return render(request, 'company.html', {'form' : form, 'Verified': Verified, 'NotVerified': NotVerified })
+
+def verification(request):
+    msg = ""
+    if request.method == 'POST':
+        form = Verification(request.POST)
+        if(form.is_valid()):
+            Payload = {
+                "token": str(Token).replace('"',""),
+                "confirmationCode": str(form.cleaned_data['VerificationCode'])
+            }
+            
+            r = requests.post(url = SIGNUPCONFIRM, json = Payload, headers = API_KEY)
+            print(form.cleaned_data['VerificationCode'])
+            print(str(Token).replace('"',""))
+            if(r.status_code == 200):
+                return HttpResponseRedirect('checking')
+            else:
+                msg = 'Wrong Verification Code'
+        else:
+            print(form.errors) 
+    else:
+        form = Verification()
+    return render(request, 'verification.html', {'form' : form, 'msg': msg})
+
+
 
 def user(request):
     return render(request, 'user.html')

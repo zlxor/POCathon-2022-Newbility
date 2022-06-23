@@ -11,5 +11,6 @@ urlpatterns = [
     path('user', views.user, name='user'),
     path('jobinfo', views.jobinfo, name='jobinfo'),
     path('recommend', views.recommend, name='recommend'),
-    path('checking', views.checking, name="checking")
+    path('checking', views.checking, name="checking"),
+    path('verification', views.verification, name="verification"),
 ]
