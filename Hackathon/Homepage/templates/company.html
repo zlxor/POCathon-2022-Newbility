@@ -105,8 +105,8 @@
                                         <h5 class="mb-1">{{ UJob.JobTitle }}</h5>
                                         <p class="mb-2" style="color: var(--dark)">{{ UJob.Company }} </p>
                                         <p class="mb-0" style="font-size:small"> {{ UJob.Location }}</p>
-                                        <p class="mb-1"style="font-size:small"> USD {{ UJob.Salary }} monthly</p>
-                                        <p class="mb-0" style="font-size:small"> Source: {{ UJob.Source }}</p>
+                                        <p class="mb-0"style="font-size:small"> USD {{ UJob.Salary }} monthly</p>
+                                        <p class="mb-1" style="font-size:small"> Source: {{ UJob.Source }}</p>
                                         <ul>
                                             {% with UJob.JobDescription|split:";" as Rows %}
                                                 {% for details in Rows %}
@@ -184,22 +184,43 @@
                                             {% csrf_token %}
                                             <div class="row g-3">
                                                 <div class="col-12 col-sm-6">
-                                                    {{ form.Department }}
+                                                    <div class="form-floating">
+                                                        {{ form.JobTitle }}
+                                                        <label for="jobtitle">Job Title</label>
+                                                    </div>
                                                 </div>
                                                 <div class="col-12 col-sm-6">
-                                                    {{ form.Location }}
+                                                    <div class="form-floating">
+                                                        {{ form.Company }}
+                                                        <label for="companyname">Company Name</label>
+                                                    </div>
                                                 </div>
                                                 <div class="col-12 col-sm-6">
-                                                    {{ form.JobTitle }}
+                                                    <div class="form-floating">
+                                                        {{ form.Salary }}
+                                                        <label for="salary">Salary</label>
+                                                    </div>
                                                 </div>
                                                 <div class="col-12 col-sm-6">
-                                                    {{ form.Salary }}
+                                                    <div class="form-floating">
+                                                        {{ form.Source }}
+                                                        <label for="source">Source</label>
+                                                    </div>
                                                 </div>
                                                 <div class="col-12">
-                                                    {{ form.JobDescription }}
+                                                    <div class="form-floating">
+                                                        {{ form.Location }}
+                                                        <label for="location">Location</label>
+                                                    </div>
                                                 </div>
                                                 <div class="col-12">
-                                                    <button class="btn btn-primary w-100 py-3" type="submit" value='OK'>Post it!</button>
+                                                    <div class="form-floating">
+                                                        {{ form.JobDescription }}
+                                                        <label for="desc">Job Description</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <button class="btn btn-primary w-100 py-3" type="submit">Post it</button>
                                                 </div>
                                             </div>
                                         </form>

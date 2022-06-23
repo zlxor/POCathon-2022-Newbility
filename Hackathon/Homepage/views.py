@@ -101,14 +101,15 @@ def signupcompany(request):
 
 def company(request):
     if request.method == 'POST':
-        print("Here?")
         form = PostJobs(request.POST)
         if(form.is_valid()):
             form.save()
+        else:
+            print(form.errors)
     else:
         form = PostJobs()
         Verified = VerifiedJobListing.objects.all()
-        NotVerified = VerifiedJobListing.objects.all()
+        NotVerified = JobListing.objects.all()
     return render(request, 'company.html', {'form' : form, 'Verified': Verified, 'NotVerified': NotVerified })
 
 def user(request):

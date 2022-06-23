@@ -35,12 +35,15 @@ class CompanySignupForm(forms.ModelForm):
         fields = '__all__'
 
 class PostJobs(forms.ModelForm):
-    Department = forms.CharField(widget=forms.TextInput(attrs={'class' : "form-control border-0", 'placeholder':"Department", 'style':"height: 55px;"}),required=True)
-    JobTitle = forms.CharField(widget=forms.TextInput(attrs={'class' : "form-control border-0", 'placeholder':"Job Title", 'style':"height: 55px;"}),required=True)
-    Location = forms.CharField(widget=forms.TextInput(attrs={'class' : "form-control border-0", 'placeholder':"Location", 'style':"height: 55px;"}),required=True)
-    Salary = Phone = forms.IntegerField(widget=forms.TextInput(attrs={'class' : "form-control border-0", 'placeholder':"Salary", 'style':"height: 55px;"}),required=True)
-    JobDescription = forms.CharField(widget=forms.TextInput(attrs={'class':"form-control border-0", 'rows':"5", 'placeholder':"Job Description", 'style':"height: 165px;"}),required=True)
+    JobTitle = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}),required=True)
+    Company = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}),required=True)
+    Location = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}),required=True)
+    Salary = forms.IntegerField(widget=forms.TextInput(attrs={'class': 'form-control'}),required=True)
+    Source = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}), required=True)
+    JobDescription = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}), required=True)
+
     class Meta:
         model = JobListing
-        exclude = ['Company', 'Source']
+        fields = '__all__'
+        # exclude = ['Company', 'Source']
 
