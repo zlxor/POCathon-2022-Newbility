@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .forms import LoginForm, UserSignupForm, CompanySignupForm, PostJobs
 from django.views.decorators.csrf import csrf_exempt  
-from .models import Individual, Company  
+from .models import JobListing, Company, Individual, VerifiedJobListing
 import requests
 import ssl
 
@@ -101,18 +101,15 @@ def signupcompany(request):
 
 def company(request):
     if request.method == 'POST':
+        print("Here?")
         form = PostJobs(request.POST)
         if(form.is_valid()):
-            #Payload = {
-            #    "username": form.cleaned_data['Email'],
-            #    "password": form.cleaned_data['Password']
-            #}
-            #r = requests.post(url = SIGNUP, params = Payload, headers = API_KEY)
-            #print(r)
             form.save()
     else:
         form = PostJobs()
-    return render(request, 'company.html', {'form' : form})
+        Verified = VerifiedJobListing.objects.all()
+        NotVerified = VerifiedJobListing.objects.all()
+    return render(request, 'company.html', {'form' : form, 'Verified': Verified, 'NotVerified': NotVerified })
 
 def user(request):
     return render(request, 'user.html')

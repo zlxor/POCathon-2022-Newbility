@@ -25,13 +25,24 @@ class Company(models.Model):
     def __str__(self):
         return self.CompanyName
 
-class JobListing(models.Model):
-    Company = models.ManyToManyField(Company)
-    Department = models.CharField(max_length=200)
-    Location = models.CharField(max_length=200)
+class VerifiedJobListing(models.Model):
     JobTitle = models.CharField(max_length=200)
+    Company = models.CharField(max_length=200)
+    Location = models.CharField(max_length=200)
     Salary = models.IntegerField()
-    JobDescription = models.CharField(max_length=200)
+    JobDescription = models.TextField(max_length=1000)
+    Hash = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.Company, self.JobTitle
+        return '{}/{}'.format(self.Company, self.JobTitle)
+
+class JobListing(models.Model):
+    JobTitle = models.CharField(max_length=200)
+    Company = models.CharField(max_length=200)
+    Location = models.CharField(max_length=200)
+    Salary = models.IntegerField()
+    Source = models.CharField(max_length=200)
+    JobDescription = models.TextField(max_length=1000)
+
+    def __str__(self):
+        return '{}/{}'.format(self.Company, self.JobTitle)

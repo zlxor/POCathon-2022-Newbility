@@ -35,15 +35,12 @@ class CompanySignupForm(forms.ModelForm):
         fields = '__all__'
 
 class PostJobs(forms.ModelForm):
-    Locations = [ ('1','Pasir Ris'), ('2','Raffles'), ('3','City Hall'), ('4','Tampines'), ('5','Bugis'), ('6','Jurong East'),
-                  ('7','Outram Park'), ('8','Hougang'), ('9','Woodlands'), ('10','Bukit Batok'), ('11','Yew Tee'), ('12','Pioneer'),]
     Department = forms.CharField(widget=forms.TextInput(attrs={'class' : "form-control border-0", 'placeholder':"Department", 'style':"height: 55px;"}),required=True)
-    Location = forms.ChoiceField(widget=forms.Select(attrs={'class' : "form-select border-0", 'style' : "height: 55px;"}), choices = Locations)
     JobTitle = forms.CharField(widget=forms.TextInput(attrs={'class' : "form-control border-0", 'placeholder':"Job Title", 'style':"height: 55px;"}),required=True)
-    Salary = forms.IntegerField(widget=forms.TextInput(attrs={'class' : "form-control border-0", 'placeholder':"Salary", 'style':"height: 55px;"}),required=True)
-    JobDescription = forms.CharField(widget=forms.Textarea(attrs={'class':"form-control border-0", 'rows':"5", 'placeholder':"Job Description"}),required=True)
-
+    Location = forms.CharField(widget=forms.TextInput(attrs={'class' : "form-control border-0", 'placeholder':"Location", 'style':"height: 55px;"}),required=True)
+    Salary = Phone = forms.IntegerField(widget=forms.TextInput(attrs={'class' : "form-control border-0", 'placeholder':"Salary", 'style':"height: 55px;"}),required=True)
+    JobDescription = forms.CharField(widget=forms.TextInput(attrs={'class':"form-control border-0", 'rows':"5", 'placeholder':"Job Description", 'style':"height: 165px;"}),required=True)
     class Meta:
         model = JobListing
-        fields = '__all__'
+        exclude = ['Company', 'Source']
 
