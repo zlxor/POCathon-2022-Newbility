@@ -142,6 +142,31 @@ def verification(request):
 
 
 
+def verification(request):
+    msg = ""
+    if request.method == 'POST':
+        form = Verification(request.POST)
+        if(form.is_valid()):
+            Payload = {
+                "token": str(Token).replace('"',""),
+                "confirmationCode": str(form.cleaned_data['VerificationCode'])
+            }
+            
+            r = requests.post(url = SIGNUPCONFIRM, json = Payload, headers = API_KEY)
+            print(form.cleaned_data['VerificationCode'])
+            print(str(Token).replace('"',""))
+            if(r.status_code == 200):
+                return HttpResponseRedirect('checking')
+            else:
+                msg = 'Wrong Verification Code'
+        else:
+            print(form.errors) 
+    else:
+        form = Verification()
+    return render(request, 'verification.html', {'form' : form, 'msg': msg})
+
+
+
 def user(request):
     return render(request, 'user.html')
 
