@@ -200,8 +200,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular.min.js"></script>
@@ -219,9 +218,27 @@
     <script src="{% static 'js/company.js' %}"></script>
     <script src="{% static 'js/timeline.js' %}"></script>
     <script>
-
+        function postJobOpportunityValidation(){
+            var jobDesc = $("#id_JobDescription").val();
+            var valid = true;
+            if(jobDesc.indexOf("bank") != -1){
+                return "Please do NOT include financial-related info";
+            }
+            if(jobDesc.indexOf("NRIC") != -1){
+                return "Please do NOT include sensitive personal data requests";
+            }
+            if(jobDesc.indexOf("www") != -1){
+                return "Please do NOT include redirecting urls";
+            }
+            if(jobDesc.indexOf("WhatsApp") != -1){
+                return "External Social Media contact is prohibitted!";
+            }
+            if(valid){
+                return "Job Posted Successfully";
+            }
+            return valid;
+        }
         $(".btn2").click(function () {
-            console.log("delete");
             var disappearEle = this.closest('div.jobWaitingForVerify');
             var css = {};
             css = { display: 'none' };
@@ -238,7 +255,6 @@
             var btnToAdd = elements[0];
             var verifiedelements = document.getElementsByClassName('verified');
             var verifyImg = verifiedelements[0];
-            console.log(blockToAddImg); 
             $(".jobVerified").prepend(addingEle);
             var b2 = this.nextElementSibling;
             css = { display: 'none' };
@@ -249,28 +265,25 @@
         });
 
         $("#postBtn").click(function () {
-            var jobDesc = $("#id_JobDescription").val();
-            var valid = true;
-            console.log(jobDesc);
-            if(jobDesc.indexOf("bank") != -1){
-                $.notify('Please do NOT include financial-related info',
-                );
-                valid = false;
+            var valMsg = postJobOpportunityValidation();
+            if(valMsg.indexOf("Successfully") != -1){
+                var formData = {};
+                formData.csrfmiddlewaretoken = '{{ csrf_token }}';
+                formData.description = $("#id_JobDescription").val();
+
+                console.log("testing");
+                $.ajax({
+                    type: "POST",
+                    url: '{{ 'company-post-job/' }}',   
+                    data: formData, 
+                    success:  function(response){
+                        alert(response);
+                        $.notify('Job Posted Successfully!', "success");
+                    }
+                });
             }
-            if(jobDesc.indexOf("NRIC") != -1){
-                $.notify('Please do NOT include sensitive personal data requests');
-                valid = false;
-            }
-            if(jobDesc.indexOf("www") != -1){
-                $.notify('Please do NOT include redirecting urls');
-                valid = false;
-            }
-            if(jobDesc.indexOf("WhatsApp") != -1){
-                $.notify('External Social Media contact is prohibitted!', "error");
-                valid = false;
-            }
-            if(valid){
-                $.notify('Job Posted Successfully!', "success");
+            else{
+                $.notify(valMsg, "error");
             }
         });
 

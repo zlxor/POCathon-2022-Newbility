@@ -1,11 +1,13 @@
 from django.contrib import messages
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.http import HttpResponse
 from .forms import LoginForm, UserSignupForm, CompanySignupForm, PostJobs, Verification
 from django.views.decorators.csrf import csrf_exempt  
 from .models import JobListing, Company, Individual, VerifiedJobListing
 import requests
 import ssl
+import json
 
 try:
     _create_unverified_https_context = ssl._create_unverified_context
@@ -155,3 +157,11 @@ def recommend(request):
 
 def checking(request):
     return render(request, 'checking.html')
+
+def postJob(request):
+    if request.method == 'POST':
+        response_json = request.POST
+        response_json = json.dumps(response_json)
+        data = json.loads(response_json)
+        print(data)
+    return HttpResponse("Posted Successfully")
